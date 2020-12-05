@@ -1,22 +1,100 @@
 \documentclass[11pt]{article}
 %
-% \usepackage{basic}
+\usepackage{basic}
 %
 \begin{document}
-%
-Test change
+% 
+\section{Goal}
+% Let $\nu\in Q_+$ be of height $p$. 
+In \cite{baumann2019mirkovic} the authors introduce a measure $\barD:\CC[N]\to\CC(\t)$ defined by 
+\begin{equation}
+    \label{eq:defbard}
+    \barD(f) = \sum_{\vi\in\Seq(\nu)}\langle e_{\vi},f\rangle\barD_{\vi}\qquad f \in \CC[N]_{-\nu}
+\end{equation}
+where 
+\begin{equation}
+    \label{eq:bardi}
+    \barD_{\vi} = \prod_{k=1}^p\frac{1}{\alpha_{i_1} + \cdots + \alpha_{i_k}} \qquad p = \hgt \nu 
+\end{equation}
+By BKK Proposition 8.4, or Thesis Theorem 3.4.2, it can be realized more invariantly as 
+\begin{equation}
+    \label{eq:invbard}
+    %  \qquad 
+     \barD(f)(x) = f(n_x)
+\end{equation}
+They (BKK, Proposition A.5) and we (Thesis, Proposition 5.4.4) show that when $f = b_Z$ is an element of the MV basis indexed by a stable MV cycle of weight $\nu$, i.e.\ $Z\subset \overline{S^\nu_+\cap S^0_-}$
+\begin{equation}
+    \label{eq:bardaseqm}
+    \barD(b_Z) = \varepsilon_{L_0}^T (Z) 
+\end{equation}
+
+When $f = c_Y$ is an element of the dual semicanonical basis indexed by an irreducible component $Y$ of $\Lambda(\nu)$
+\begin{equation}
+    \label{eq:bardaseu} % eu for euler 
+    \barD(c_Y) = \sum_{\vi\in\Seq(\nu)}\chi(F_{\vi}(M))\barD_{\vi} \qquad M \in Y
+\end{equation}
+
+We would like an ``asymptotic'' $\hbar$-version of $\barD$ which manifests as a $T\times\CC^\times$-equivariant multiplicity on elements of the MV basis:
+$$
+\barD_\hbar(b_Z) = \varepsilon_{L_0}^{T\times\CC^\times} (Z) \in \CC(\t,\hbar)
+$$
+
+Recall the MVy isomorphism $\tilde\Phi : \TT_\mu\cap\cN \to G_1[t^{-1}]t^\mu$ defined by
+\begin{equation}
+    \tilde\Phi(A) = t^\mu + a(t) \qquad a(t)_{ij} = -\sum A_{ij}^k t^{k-1}
+\end{equation}
+where $A_{ij}^k$ denotes the $k$th entry from the left of the $\mu_j\times\mu_i$ block. We will use it to see what is the $T\times\CC^\times$ multidegree of $Z\subset\Gr_\mu$. Let $s\in\CC^\times$ act by loop rotation, and $g = \diag(t_1,\dots,t_m)\in T$ act by conjugation. Note that if we allowed $g\in T(\cO)$ then these actions would not commute. As it is we set  
+$$
+(g,s) \cdot \tilde\Phi(A) = {\color{red} s^{\mu}}((s^{-1}t)^\mu + g\cdot a(s^{-1}t)) = t^\mu + g\cdot {\color{red} s^{\mu}} a(s^{-1}t) 
+$$
+where 
+$$
+\begin{aligned}
+(g\cdot {\color{red} s^{\mu}}a(st))_{ij} &= - t_jt_i^{-1}\sum_{k=1}^{\mu_i} A_{ij}^k s^{k-1{\color{red}+\mu_j}}t^{k-1} \\
+&= -t_jt_i^{-1}(A_{ij}^1 s^{\mu_j} + A_{ij}^2 s^{1 + \mu_j}t + \cdots + A_{ij}^{\mu_i}s^{\mu_i + \mu_j - 1}t^{\mu_i - 1}) \\
+&= -t_jt_i^{-1}s^{\mu_i + \mu_j - 1}(A_{ij}^1 s^{-\mu_i + 1} + A_{ij}^2 s^{-\mu_i + 2}t + \cdots + A_{ij}^{\mu_i}t^{\mu_i - 1})
+\end{aligned}
+$$
+In the limit $s\to \infty$ the $A_{ij}^{\mu_i}$ term dominates, so the multidegree of $a(t)_{ij}=0$ is 
+$$z_j - z_i + (\mu_i + \mu_j - 1)\hbar$$
+In particular, the multidegree of zero in $\n$ will be 
+$$
+\prod_{\beta\in\Delta_+} (\beta + \hbar)
+$$
+because all $\mu_i = 1$. More generally, the multidegree of zero in $\TT_\mu\cap\n$ will be 
+$$
+\prod_{1\le i<j\le m} (z_i - z_j + (\mu_i + \mu_j - 1)\hbar)
+$$
+
+Now in order to define the asymptotic analogue of $\barD$ on $\CC[N]$ we probably have to deform $\CC[N]$. Why? Let's recall how the geometric Satake works. The class of $Z\in\irr\overline{\Gr^\lambda\cap S^\mu_-}$ in the Borel--Moore homology of $\overline{\Gr^\lambda\cap S^\mu_-}$ is identified with a vector in $L(\lambda)_\mu$ such that the class of the fixed point $L_\lambda$ is sent to the highest weight vector $v_\lambda$. Then $v\in L(\lambda)$ is sent to $f\in\CC[N]$ such that 
+$$
+f(n) = v_\lambda^\ast(n\cdot v)
+$$
+But what happens to the $\CC^\times$ action under this map? What happens to the $T$ action for that matter? 
+
+It may be helpful to recall that if $Z$ is stable of type $\nu$ then $b_Z$ is unique such that whenever $\nu + \mu \in P_+$ 
+$$
+t^\mu Z \subset \overline{\Gr^{\nu + \mu }} \Rightarrow b_Z = \Psi_{\nu + \mu}([t^\mu Z])
+$$
+
+\section{Two $\CC^\times$ actions}
+
+\section{Ben's suggestion} 
+To investigate the special case of  Gelfand--Tsetlin modules and $W$-algebras discussed at the end of \cite{kamnitzer2019category}. I have yet to do any examples. 
+
+Further references include papers of Losev (\cite{losev2010finite,losev2010quantized,losev2011finite}) and Brundan and Kleschev (\cite{brundan2006shifted,brundan2009blocks}) on $W$-algebras.
 %
 % import bibliography from tex.bib file
 %
-% \bibliographystyle{plain}
-% \bibliography{tex}
+\bibliographystyle{alpha}
+\bibliography{mvklr}
 %
 % for bundling, bbl file contains
 %
 % \begin{thebibliography}{E-G-S}
 
-% \bibitem[A1]{Anderson00}
-% J.~E.~Anderson, \textit{On Mirkovi\'c and Vilonen's Intersection Homology cycles for the Loop Grassmannian.} PhD thesis, Princeton University, 2000.
+% \bibitem[KTWWY19]{kam19}
+% Kamnitzer, J., Tingley, P., Webster, B., Weekes, A., \& Yacobi, O. (2019). On category O for affine Grassmannian slices and categorified tensor products. Proceedings of the London Mathematical Society, 119(5), 1179-1233.
 
 % \end{thebibliography}
 %
