@@ -1,182 +1,392 @@
 \documentclass[11pt]{article}
 %
 \usepackage{basic}
+% 
+\newcommand{\anne}[1]{{\color{pink!50!blue}Anne:~#1}}
+\newcommand{\todo}[1]{{\color{red!50!white}\textbf{#1}}} % TODO
 %
-\title{Case study: $A_3$}
+\title{Case study: weight $\alpha_1 + 2\alpha_2 + \alpha_3$ in type $A_3$}
+\author{Elie, Anne}
 \begin{document}
 \maketitle
 %
-Let us investigate the case $\nu = (1,2,1) = \alpha_1 + 2\alpha_2 + \alpha_3$ with $\kpf(\nu) = 5$. We are interested in the multidegrees, equivariant multiplicities, and Hilbert series of the five MV cycles $\irr\overline{S^0\cap T^\nu}$ so we begin by describing their ideals.
+We would like to deform the map $\barD : \CC[N]\to \CC[\treg]$ such that \todo{what}. 
+To this end, we sample/compare candidates for quantum and asymptotic versions of $\barD$ on elements of the MV basis of weight $\nu = (1,2,1) = \alpha_1 + 2\alpha_2 + \alpha_3$. The dimension of $\CC[N]_{-\nu}$ is $\kpf(\nu) = 5$. The five \todo{partitions} of $\nu$ are:
+\begin{enumerate}
+    \item $(\alpha_1 + \alpha_2) + (\alpha_2) + (\alpha_3)$
+    \item $(\alpha_1 + \alpha_2 + \alpha_3) + (\alpha_2)$
+    \item $(\alpha_1 + \alpha_2) + (\alpha_2 + \alpha_3)$
+    \item $(\alpha_1) + (\alpha_2) + (\alpha_2 + \alpha_3)$
+    \item $(\alpha_1) + 2(\alpha_2) + (\alpha_3)$
+\end{enumerate}
+% 
+Fix the order $3 < 2 < 1$ on $I$ and fix the \todo{to be defined} ``compatible'' reduced expression $\uvi = (1,2,3,1,2,1)$ for $w_0\in W$. 
 
-\begin{question}
-    Does there exist some natural order on Lusztig data? aka, on Kostant partitions? 
-\end{question}
+\anne{Verify that this is indeed the order we want!} 
 
-\noindent Fix the order $3 < 2 < 1$ on $I$ and the reduced expression $\uvi = (1,2,3,1,2,1)$ for $w_0\in W$. 
+With respect to these choices, we can replace the above list of partitions by \todo{Lusztig data}:  
+\begin{enumerate}
+    \item $(0,1,0,1,0,1)$
+    \item $(0,0,1,1,0,0)$
+    \item $(0,1,0,0,1,0)$
+    \item $(1,0,0,1,1,0)$
+    \item $(1,0,0,2,0,1)$
+\end{enumerate}
+Nb.\ There are exactly five Lusztig data of weight $\nu$.
+
+\anne{We will also record this list using \todo{Lyndon words}. In what follows we write words using redundant dots to exaggerate the constituent \todo{good} \todo{root} words?}
+
+For each of the above (triples of) combinatorial data we record the corresponding MV cycle, its polytope, its multidegree, its (zeroth) equivariant multiplicity, and its (multigraded) Hilbert series. 
+% There are five MV cycles $\irr\overline{S^0\cap T^\nu}$ 
+We also record the irreducible character and residual $\barD$ of the corresponding simple module for the KLR algebra. 
+% The KLR algebra is R^0_\nu? 
+
+% \begin{question}
+\anne{Does there exist some natural order on Lusztig data? aka, on Kostant partitions?}
+% \end{question}
+
+For the time being we use two equivalent conventions:
+\begin{enumerate}
+    \item {\color{red}The word for the positive root $\alpha_i + \cdots + \alpha_j$ is $i\,i+1\,\cdots\,j$ i.e.\ increasing wrt $1 < 2 < 3$, and root words are concatenated in decreasing order} (Mine)
+    \item {\color{blue}The word for the positive root $\alpha_i + \cdots + \alpha_j$ is $j\,j-1\,\cdots\,i$ i.e.\ decreasing wrt $1 < 2 < 3$, and root words are concatenated in increasing order} (Elie's)
+\end{enumerate}
 
 \begin{description}
-    \item[{\bf 1.} $n_\bullet = (0,1,0,1,0,1)$:] $\lambda = (4,3,1,0)$ and $\mu = (3,2,2,1)$ 
-    \hfill
- 
-    % \begin{figure}[ht!]
-    % \begin{center}
-        \includegraphics[height=100px]{img/3212.jpeg}
-    % \end{center}
-    % \caption{Lyndon word 3212}
-    % \end{figure}
-
-    From its tableau 
-    $$
-    \young(1113,223,4)
-    $$
-    we find the ideal of the corresponding MV cycle in
-    {\small$$\begin{pmatrix}
-        0&1&0&0&0&0&0&0\\
-        0&0&1&0&0&0&0&0\\
-        0&0&0&{a}_{1}&{a}_{2}&{a}_{3}&{a}_{4}&{a}_{5}\\
-        0&0&0&0&1&0&0&0\\
-        0&0&0&0&0&{a}_{6}&{a}_{7}&{a}_{8}\\
-        0&0&0&0&0&0&1&0\\
-        0&0&0&0&0&0&0&{a}_{9}\\
-        0&0&0&0&0&0&0&0\end{pmatrix}
-        \mapsto \begin{pmatrix}
-            t^3 \\
-            -a_1 -a_2t & t^2 \\
-            -a_3 -a_4t & -a_6 - a_7 t & t^2 \\
-            -a_5 & -a_8 & -a_9 & t 
-        \end{pmatrix}
+    \item[{\bf 1.} $n_\bullet = (0,1,0,1,0,1)$:] 
+    % $; $\lambda = (4,3,1,0)$ and $\mu = (3,2,2,1)$ 
+    \[
+        w[n_\bullet] ={\color{red}3.2.12} = {\color{blue}21.2.3} \qquad \lambda = (4,3,1,0) \ge \mu = (3,2,2,1)
+    \]
+% 
+% \begin{figure}[ht!]
+% \begin{center}
+    {\small$$
+    \begin{gathered}
+        \includegraphics[height=100px]{img/3212.jpeg} 
+    \end{gathered}= \Conv(\alpha_2, \alpha_1 + \alpha_2,\alpha_1 + 2\alpha_2, 2\alpha_2, 2\alpha_2+\alpha_3,\alpha_2+\alpha_3,\nu) 
     $$}
-    by imposing 
-    $$
-    \young(111,2)\subset\young(111,22)\subset\young(111,223)\subset\young(1113,223)
-    $$
-    so $I = \left({a}_{1},{a}_{2},{a}_{6},{a}_{3},{a}_{4}\right)$. We compute by hand 
-    $$
-    \mdeg I = (\alpha_1)(\alpha_1 + \hbar) (\alpha_1 + \alpha_2) (\alpha_1 + \alpha_2 + \alpha_3) (\alpha_2 )
-    $$
-    and so 
-    $$
-    \varepsilon^{T\times\CC^\times}_0(I) = \frac{1}{(\alpha_1 + \alpha_2 + \hbar)(\alpha_2 + \hbar) (\alpha_2 + \alpha_3) (\alpha_3 )}
-    $$
-    \item[{\bf 2.} $n_\bullet = (0,0,1,1,0,0)$:] $\lambda = (3,2,0,0)$ and $\mu = (2,1,1,1)$ \hfill 
+% \end{center}
+% \caption{Lyndon word 3212}
+% \end{figure}
 
-    \includegraphics[height=100px]{img/2123.jpeg}
+From \todo{its tableau} 
+\[
+    \tau = \young(1113,223,4)
+\]
+we find the ideal of the corresponding MV cycle in $\CC[a_1..a_9]$ where $a_i$ are coordinates on $\TT_\mu\cap\n$ and $\Gr_\mu\cap S^\mu_-$ which are related by the MVy isomorphism
+{\small$$\left[\begin{BMAT}{ccc:cc:cc:c}{ccc:cc:cc:c}
+    0&1&0&0&0&0&0&0\\
+    0&0&1&0&0&0&0&0\\
+    0&0&0&{a}_{1}&{a}_{2}&{a}_{3}&{a}_{4}&{a}_{5}\\
+    0&0&0&0&1&0&0&0\\
+    0&0&0&0&0&{a}_{6}&{a}_{7}&{a}_{8}\\
+    0&0&0&0&0&0&1&0\\
+    0&0&0&0&0&0&0&{a}_{9}\\
+    0&0&0&0&0&0&0&0\end{BMAT}\right]
+    \mapsto \begin{bmatrix}
+        t^3 \\
+        -a_1 -a_2t & t^2 \\
+        -a_3 -a_4t & -a_6 - a_7 t & t^2 \\
+        -a_5 & -a_8 & -a_9 & t 
+    \end{bmatrix}
+$$}
+The ideal is found by imposing rank conditions on (principal submatrices of) $X\in\TT_\mu\cap\n$ coming from the shapes of the nested sequence of subtableaux of $\tau$
+$$
+\young(111,2)\subset\young(111,22)\subset\young(111,223)\subset\young(1113,223) \subset \tau 
+$$
+It is $I = \left({a}_{1},{a}_{2},{a}_{3},a_9,a_5\right)$. 
+% Errors: had {a}_{6},{a}_{4}
+% 
+Its multidegree is 
+% $$
+% \mdeg I = (\alpha_1)(\alpha_1 + \hbar) (\alpha_1 + \alpha_2) (\alpha_1 + \alpha_2 + \alpha_3) (\alpha_2 )
+% $$
+% and verify using M2 to find that actually we made a booboo, it should be 
+% $$
+% \mdeg I = (\alpha_1)(\alpha_1 + \hbar) (\alpha_1 + \alpha_2) (\alpha_1 + \alpha_2 + \hbar) (\alpha_2)
+% $$
+\[
+\mdeg I = \left(\alpha_{1}+{\alpha}_{2}\right)\left({\alpha}_{3}+{\alpha}_{1}+\alpha_2\right)\left(\hbar+{\alpha}_{1}\right)\left({\alpha}_{1}{\alpha}_{3}\right)    
+\]
+The equivariant multiplicity of $I$ at zero is got by normalizing the multidegree by dividing by the multidegree of zero in the ambient affine space $\TT_\mu\cap\n$ (i.e.\ the multidegree of the ideal of zero). It is
+$$
+% boo boo persisting: \varepsilon^{T\times\CC^\times}_0(I) = \frac{1}{(\alpha_1 + \alpha_2 + \hbar)(\alpha_2 + \hbar) (\alpha_2 + \alpha_3) (\alpha_3 )}
+% \varepsilon^{T\times\CC^\times}_0(I) = \frac{1}{(\alpha_1 + \alpha_2 + \alpha_3)(\alpha_2 + \hbar) (\alpha_2 + \alpha_3) (\alpha_3 )}
+\varepsilon^{T\times\CC^\times}_0(I) = \frac{1}{(\alpha_1 + \alpha_2 + \hbar)(\alpha_2)(\alpha_2+\hbar)(\alpha_2 + \alpha_3)}
+$$
 
-    From its tableau 
-    $$
-    \young(114,23)
-    $$
-    we find the ideal of the corresponding MV cycle in 
-    $$\begin{pmatrix}
-        0&1&0&0&0\\
-        0&0&{a}_{1}&{a}_{2}&{a}_{3}\\
-        0&0&0&{a}_{4}&{a}_{5}\\
-        0&0&0&0&{a}_{6}\\
-        0&0&0&0&0\end{pmatrix}\mapsto \begin{pmatrix}
-            t^2 \\
-            -a_1 & t \\
-            -a_2 & -a_4 & t \\
-            -a_3 & -a_5 & -a_6 & t 
-        \end{pmatrix}$$
-    by imposing 
-    $$
-    \young(11,2)\subset\young(11,23)
-    $$
-    so $I = (a_1,a_2)$. We compute by hand 
-    $$
-    \mdeg I = (\alpha_1) (\alpha_1 + \alpha_2)
-    $$
-    and so 
-    $$
-    \varepsilon^{T\times\CC^\times}_0(I) = \frac{1}{(\alpha_1 + \alpha_2 + \alpha_3)(\alpha_2)(\alpha_2 + \alpha_3)(\alpha_3)}
-    $$
-    \item[{\bf 3.} $n_\bullet = (0,1,0,0,1,0)$:] $\lambda = (2,2,0,0)$ and $\mu = (1,1,1,1)$ \hfill 
+Using Macaulay2 we find that $I$ has $T\times\CC^\times$-graded Hilbert series
+% $$
+% \frac{1}{\left(1-{T}_{0}{T}_{1}{T}_{2}\right)\left(1-{T}_{1}{T}_{2}\right
+%     )\left(1-{T}_{1}{T}_{3}\right)\left(1-{T}_{2}\right)}
+% $$
+\[
+    \frac{1}{\left(1-{T}_{0}{T}_{1}{T}_{3}\right)\left(1-{T}_{1}{T}_{2}\right)\left(1-{T}_{1}\right)\left(1-{T}_{1}{T}_{3}\right)}    
+\]
+\anne{The $T$'s here are formal variables keeping track of the weights of the torus $\times$ loop rotation action, as multiplicative weights, i.e.\ characters. 
+Does $q$ also do this? I would like to \todo{justify} rewriting this Hilbert series as 
+\[
+    \frac{1}{(1 - q^{\alpha_1 + \alpha_2 + \hbar})(1-q^{\alpha_2 + \alpha_3})(1-q^{\alpha_2})(1-q^{\alpha_2 + \hbar})}    
+\]
+}
 
-    \includegraphics[height=100px]{img/2312.jpeg}
+Using Jon Brundan's program, the irreducible character of the simple KLR module $L$ with the given Lusztig datum is 
+% IC[4] = 
+\[
+    \ch L = [1|2|3|2]+(q+q^{-1})[1|3|2|2]+(q+q^{-1})[3|1|2|2]+[3|2|1|2]
+\]
+\anne{Now, I am not sure whether these words should be read using the red convention or the blue. But, according to Joel, (according to Elie,) $\barD(L)$  is obtained from $\ch L$ by replacing each $w[i_1..i_4]$ by 
+$$\barD_{w[i_1..i_4]}:= \frac 1 {\alpha_{i_1}(\alpha_{i_1} + \alpha_{i_2})(\alpha_{i_1} + \alpha_{i_2} + \alpha_{i_3})(\alpha_{i_1}+\alpha_{i_2} + \alpha_{i_3}+\alpha_{i_4})}$$ and summing. In fact, the thing that seems to work is reading these guys in reverse---Elie's convention??---i.e.\ replacing $w[i_1..i_4]$ by 
+$$\barD_{w[i_1..i_4]}:= \frac 1 {\alpha_{i_4}(\alpha_{i_3} + \alpha_{i_4})(\alpha_{i_2} + \alpha_{i_3} + \alpha_{i_4})(\alpha_{i_1}+\alpha_{i_2} + \alpha_{i_3}+\alpha_{i_4})}$$ 
+In this case, we find % something ghastly
+{\tiny
+$$
+\barD (L) =
+% \hspace*{-5.5cm}
+\begin{aligned}{a}_{1}^{2}{a}_{2}q^{2}+5\,{a}_{1}{a}_{2}^{2}q^{2}+4\,{a}_{2}^{3}q^{2}+{a}_{1}^{2}{a}_{3}q^{2}+6\,{a}_{1}{a}_{2}{a}_{3}q^{2}\\
+    +5\,{a}_{2}^{2}{a}_{3}q^{2}+{a}_{1}{a}_{3}^{2}q^{2}+{a}_{2}{a}_{3}^{2}q^{2}+2\,{a}_{1}^{2}{a}_{2}q+6\,{a}_{1}{a}_{2}^{2}q+8\,{a}_{2}^{3}q \\ 
+    \frac{+6\,{a}_{2}^{2}{a}_{3}q+2\,{a}_{2}{a}_{3}^{2}q+{a}_{1}^{2}{a}_{2}+5\,{a}_{1}{a}_{2}^{2}+4\,{a}_{2}^{3}+{a}_{1}^{2}{a}_{3}+6\,{a}_{1}{a}_{2}{a}_{3}+5\,{a}_{2}^{2}{a}_{3}+{a}_{1}{a}_{3}^{2}+{a}_{2}{a}_{3}^{2}}{\left(q\right)\left({{a}_{2}}\right)^{2}\left({a}_{2}+{a}_{3}\right)\left(2\,{a}_{2}+{a}_{3}\right)\left({a}_{1}+{a}_{2}\right)\left({a}_{1}+2\,{a}_{2}\right)\left({a}_{1}+2\,{a}_{2}+{a}_{3}\right)\left(2\right)}
+\end{aligned}
+$$}
+That's a big numerator---M2 doesn't want to (really can't?) simplify it. 
+Evaluating at $q = 1$ we recover
+$$\frac{1}{\left({{a}_{2}}\right)^{2}\left({a}_{2}+{a}_{3}\right)\left({a
+      }_{1}+{a}_{2}\right)}$$
+as desired! I'll take this approach in all subsequent calculations, sans annotations. 
 
-    From its tableau 
-    $$
-    \young(13,24)
-    $$
-    we find the ideal of the corresponding MV cycle in 
-    $$\begin{pmatrix}
-        0&{a}_{1}&{a}_{2}&{a}_{3}\\
-        0&0&{a}_{4}&{a}_{5}\\
-        0&0&0&{a}_{6}\\
-        0&0&0&0\end{pmatrix}\mapsto \begin{pmatrix}
-            t \\
-            -a_1 & t \\
-            -a_2 & -a_4 & t \\
-            -a_3 & -a_5 & -a_6 & t
-        \end{pmatrix}$$
-    so $I = (a_1,a_6)$. We compute by hand 
-    $$
-    \mdeg I = (\alpha_1) (\alpha_3)
-    $$
-    and so 
-    $$
-    \varepsilon^{T\times\CC^\times}_0(I) = \frac{1}{(\alpha_1 + \alpha_2)(\alpha_1 + \alpha_2 + \alpha_3)(\alpha_2)(\alpha_2 + \alpha_3)}
-    $$
-
-    \item[{\bf 4.} $n_\bullet = (1,0,0,1,1,0)$:] $\lambda = (2,2,0,0)$ and $\mu = (1,1,1,1)$ \hfill 
-
+\todo{Warning!} That's $\varepsilon^{T\times\CC^\times}(I)\big|_{\hbar = 0} = \varepsilon^{T}(I)$. How do we forget less and recover $\varepsilon^{T\times\CC^\times}(I)$ instead? No clear route from $q$-graded character to $\hbar$-equivariant multiplicity, yet!
+} 
+\item[{\bf 2.} $n_\bullet = (0,0,1,1,0,0)$:] 
+% $\lambda = (3,2,0,0)$ and $\mu = (2,1,1,1)$ \hfill 
+\[
+    w[n_\bullet] = {\color{red} 2.123} = {\color{blue} 2.321} \qquad  \lambda = (3,2,0,0) \ge \mu = (2,1,1,1)
+\]
+\[
+    \begin{gathered}
+        \includegraphics[height=100px]{img/2123.jpeg}
+    \end{gathered} = \Conv(\alpha_2,\alpha_2 + \alpha_3,2\alpha_2 + \alpha_3,\alpha_3,\alpha_1 + \alpha_2 + \alpha_3,\nu)
+\]
+From its tableau 
+$$
+\young(114,23)
+$$
+we find the ideal of the corresponding MV cycle in $\CC[a_1..a_6]$ by imposing rank conditions on matrices of the form below (left) 
+$$\begin{pmatrix}
+    0&1&0&0&0\\
+    0&0&{a}_{1}&{a}_{2}&{a}_{3}\\
+    0&0&0&{a}_{4}&{a}_{5}\\
+    0&0&0&0&{a}_{6}\\
+    0&0&0&0&0\end{pmatrix}\mapsto \begin{pmatrix}
+        t^2 \\
+        -a_1 & t \\
+        -a_2 & -a_4 & t \\
+        -a_3 & -a_5 & -a_6 & t 
+    \end{pmatrix}$$
+coming from the shapes of the nested sequence of subtableaux of $\tau$
+$$
+\young(11,2)\subset\young(11,23)
+$$
+so $I = (a_1,a_2)$. Its multidegree is
+$$
+\mdeg I = (\alpha_1) (\alpha_1 + \alpha_2)
+$$
+% double check in M2 which gives $\left({T}_{0}+{T}_{1}\right)\left({T}_{0}\right)$
+So its equivariant multiplicity (at zero) is   
+$$
+\varepsilon^{T\times\CC^\times}_0(I) = \frac{1}{(\alpha_1 + \alpha_2 + \alpha_3)(\alpha_2)(\alpha_2 + \alpha_3)(\alpha_3)}
+$$
+Using M2 we find that $I$ has Hilbert series
+$$\frac{1}{\left(1-{T}_{0}{T}_{1}{T}_{2}\right)\left(1-{T}_{1}{T}_{2}\right)\left(1-{T}_{2}\right)\left(1-{T}_{1}\right)}$$
+% 
+Using Jon Brundan's program, the character of the corresponding simple $L$ is 
+% IC[1] = 
+\[
+    \ch L = (q+q^{-1})[1|2|2|3]+[1|2|3|2]+[2|1|2|3]   
+\]
+so 
+{\tiny
+\[
+\barD (L) = 
+\frac{{a}_{1}{a}_{2}q^{2}+{a}_{2}^{2}q^{2}+{a}_{2}{a}_{3}q^{2}+2\,{a}_{2}^{2}q+{a}_{1}{a}_{3}q+2\,{a}_{2}{a}_{3}q+{a}_{3}^{2}q+{a}_{1}{a}_{2}+{a}_{2}^{2}+{a}_{2}{a}_{3}}{\left(q\right)\left({a}_{3}\right)\left({a}_{2}\right)\left({a}_{2}+{a}_{3}\right)\left(2\,{a}_{2}+{a}_{3}\right)\left({a}_{1}+{a}_{2}+{a}_{3}\right)\left({a}_{1}+2\,{a}_{2}+{a}_{3}\right)}  
+\]}
+and evaluating at $q = 1$ we recover 
+\[
+    \frac{1}{\left({a}_{3}\right)\left({a}_{2}\right)\left({a}_{2}+{a}_{3}\right)\left({a}_{1}+{a}_{2}+{a}_{3}\right)}
+\]
+    % 
+\item[{\bf 3.} $n_\bullet = (0,1,0,0,1,0)$:] 
+% $\lambda = (2,2,0,0)$ and $\mu = (1,1,1,1)$ \hfill 
+\[
+w[n_\bullet] =  {\color{red}23.12} = {\color{blue}21.32} \qquad \lambda = (2,2,0,0) \ge \mu = (1,1,1,1)  
+\]
+\[
+    \begin{gathered}
+        \includegraphics[height=100px]{img/2312.jpeg}
+    \end{gathered} = \Conv(2, 1 + 2, 1 + 2 + 3, 2 + 3, \nu) 
+\]
+% 
+From its tableau 
+$$
+\young(13,24)
+$$
+we find the ideal of the corresponding MV cycle in $\CC[a_1..a_6]$ by imposing rank conditions on matrices of the form below (left)
+$$\begin{pmatrix}
+    0&{a}_{1}&{a}_{2}&{a}_{3}\\
+    0&0&{a}_{4}&{a}_{5}\\
+    0&0&0&{a}_{6}\\
+    0&0&0&0\end{pmatrix}\mapsto \begin{pmatrix}
+        t \\
+        -a_1 & t \\
+        -a_2 & -a_4 & t \\
+        -a_3 & -a_5 & -a_6 & t
+\end{pmatrix}$$
+coming from shapes of the nested sequence of subtableaux of $\tau$
+\[
+\young(1,2)\subset\young(13,2)
+\]
+so $I = (a_1,a_6)$. 
+Its multidegree is
+$$
+\mdeg I = (\alpha_1) (\alpha_3)
+$$
+So its equivariant multiplicity (at zero) is  
+$$
+\varepsilon^{T\times\CC^\times}_0(I) = \frac{1}{(\alpha_1 + \alpha_2)(\alpha_1 + \alpha_2 + \alpha_3)(\alpha_2)(\alpha_2 + \alpha_3)}
+$$
+Using M2 we find that $I$ has Hilbert series 
+\[
+    TODO 
+\]
+Using JB, the character of the corresponding simple $L$ is 
+% IC[2] 
+\[
+    \ch L = [2|1|3|2]+[2|3|1|2]
+\]
+Note that it is symmetric and that there are no $q$'s. 
+\[
+    \barD(L) = \frac 1 {(a_2) (a_2 + a_3) (a_1 + a_2) (a_1 + a_2 + a_3)}
+\]
+\item[{\bf 4.} $n_\bullet = (1,0,0,1,1,0)$:] 
+% $\lambda = (2,2,0,0)$ and $\mu = (1,1,1,1)$ \hfill 
+\[
+w[n_\bullet] = {\color{red}23.2.1} = {\color{blue}1.2.32} \qquad \lambda = (2,2,0,0) \ge \mu = (1,1,1,1)
+\]
+\[
+\begin{gathered}
     \includegraphics[height=100px]{img/2321.jpeg}
-
-    From its tableau 
-    $$\young(12,34)$$
-    we find the ideal of the corresponding MV cycle in 
-    $$\begin{pmatrix}
-        0&{a}_{1}&{a}_{2}&{a}_{3}\\
-        0&0&{a}_{4}&{a}_{5}\\
-        0&0&0&{a}_{6}\\
-        0&0&0&0\end{pmatrix}\mapsto \begin{pmatrix}
-            t \\
-            -a_1 & t \\
-            -a_2 & -a_4 & t \\
-            -a_3 & -a_5 & -a_6 & t
-        \end{pmatrix}$$
-    so $I = \left({a}_{4},{a}_{1}{a}_{5}+{a}_{2}{a}_{6}\right)$. 
-    We compute by hand 
-    $$
-    \mdeg I = (\alpha_2) (\alpha_1 + \alpha_2 + \alpha_3)
-    $$
-    and so 
-    $$
-    \varepsilon^{T\times\CC^\times}_0(I) = \frac{1}{(\alpha_1)(\alpha_1 + \alpha_2)(\alpha_2 + \alpha_3)(\alpha_3)}
-    $$
-    \item[{\bf 5.} $n_\bullet = (1,0,0,2,0,1)$:] $\lambda = (3,3,1,0)$ and $\mu = (2,2,2,1)$ \hfill 
-
+\end{gathered}
+    = \Conv(1, 1 + 2, 1 + 2 + 3, 1 + 3, 3, 2 + 3, \nu)
+\]
+From its tableau 
+$$\young(12,34)$$
+we find the ideal of the corresponding MV cycle in \(\CC[a_1..a_6]\) by imposing rank conditions on matrices of the form below (left) 
+$$\begin{pmatrix}
+0&{a}_{1}&{a}_{2}&{a}_{3}\\
+0&0&{a}_{4}&{a}_{5}\\
+0&0&0&{a}_{6}\\
+0&0&0&0\end{pmatrix}\mapsto \begin{pmatrix}
+    t \\
+    -a_1 & t \\
+    -a_2 & -a_4 & t \\
+    -a_3 & -a_5 & -a_6 & t
+\end{pmatrix}$$
+coming from shapes of the nested sequence of subtableaux of $\tau$ 
+\[
+    \young(12)\subset\young(12,3)
+\]
+so $I = \left({a}_{4},{a}_{1}{a}_{5}+{a}_{2}{a}_{6}\right)$. 
+Its multidegree is 
+$$
+\mdeg I = (\alpha_2) (\alpha_1 + \alpha_2 + \alpha_3)
+$$
+So its equivariant multiplicity (at zero) is  
+$$
+\varepsilon^{T\times\CC^\times}_0(I) = \frac{1}{(\alpha_1)(\alpha_1 + \alpha_2)(\alpha_2 + \alpha_3)(\alpha_3)}
+$$
+Using M2 we find that $I$ has Hilbert series 
+\[
+    \frac{1}{\left(1-{T}_{1}{T}_{2}\right)\left(1-{T}_{0}{T}_{1}\right)\left(1-{T}_{2}\right)\left(1-{T}_{0}\right)}
+\]
+Using JB, the character of the corresponding simple $L$ is 
+% IC[3] = 
+\[
+\ch L = [2|1|2|3]+(q+q^{-1})[2|2|1|3]+(q+q^{-1})[2|2|3|1]+[2|3|2|1]    
+\]
+So 
+{\small \[
+\barD (L) =     
+\frac{{a}_{1}{a}_{2}q^{2}+{a}_{2}^{2}q^{2}+{a}_{1}{a}_{3}q^{2}+{a}_{2}{a}_{3}q^{2}+{a}_{1}^{2}q+{a}_{1}{a}_{2}q+{a}_{2}{a}_{3}q+{a}_{3}^{2}q+{a}_{1}{a}_{2}+{a}_{2}^{2}+{a}_{1}{a}_{3}+{a}_{2}{a}_{3}}{\left(q\right)\left({a}_{3}\right)\left({a}_{2}+{a}_{3}\right)\left({a}_{1}\right)\left({a}_{1}+{a}_{2}\right)\left({a}_{1}+{a}_{2}+{a}_{3}\right)\left({a}_{1}+2\,{a}_{2}+{a}_{3}\right)}
+\]}
+and evaluating at $q = 1$ we recover 
+\[
+    \frac{1}{\left({a}_{3}\right)\left({a}_{2}+{a}_{3}\right)\left({a}_{1}\right)\left({a}_{1}+{a}_{2}\right)}
+\]
+% Finally... 
+\item[{\bf 5.} $n_\bullet = (1,0,0,2,0,1)$:] 
+% $\lambda = (3,3,1,0)$ and $\mu = (2,2,2,1)$ \hfill 
+\[
+    w[n_\bullet] = {\color{red} 3.2.2.1} = {\color{blue} 1.2.2.3} \qquad \lambda = (3,3,1,0) \ge \mu = (2,2,2,1)
+\]
+\[
+\begin{gathered}
     \includegraphics[height=100px]{img/3221.jpeg}
-
-    From its tableau 
-    $$\young(112,233,4)$$
-    we find the ideal of the corresponding MV cycle in 
-    $$\begin{pmatrix}
-        0&1&0&0&0&0&0\\
-        0&0&{a}_{1}&{a}_{2}&{a}_{3}&{a}_{4}&{a}_{5}\\
-        0&0&0&1&0&0&0\\
-        0&0&0&0&{a}_{6}&{a}_{7}&{a}_{8}\\
-        0&0&0&0&0&1&0\\
-        0&0&0&0&0&0&{a}_{9}\\
-        0&0&0&0&0&0&0\end{pmatrix} \mapsto \begin{pmatrix}
-            t^2 & \\
-            - a_1 - a_2 t & t^2 \\
-            -a_3 -a_4 t & -a_6 - a_7t & t^2 \\
-            - a_5 & -a_8 & -a_9 & t
-        \end{pmatrix}
-    $$
-    by imposing 
-    $$
-    \young(11,2) \subset \young(112,2) \subset \young(112,23) \subset \young(112,233)
-    $$
-    so $I = \left({a}_{2},{a}_{6},{a}_{1},{a}_{9},{a}_{3}\right)$. 
-    We compute by hand 
-    $$
-    \mdeg I = \alpha_1(\alpha_1 + \hbar)(\alpha_1 + \alpha_2)(\alpha_2)(\alpha_3)
-    $$ and so 
-    $$
-    \varepsilon^{T\times\CC^\times}_0(I) = \frac{1}{(\alpha_1 + \alpha_2 + \hbar)(\alpha_1 + \alpha_2 + \alpha_3)(\alpha_2 + \hbar)(\alpha_2 + \alpha_3)}
-    $$
+\end{gathered} = \Conv(1, 1 + 2, 1 + 2 + 2, 1 + 2 + 3, 2, \nu) 
+\]
+% 
+From its tableau 
+$$\young(112,233,4)$$
+we find the ideal of the corresponding MV cycle in $\CC[a_1..a_9]$ by imposing rank conditions on matrices of the form below (left) 
+$$\begin{pmatrix}
+    0&1&0&0&0&0&0\\
+    0&0&{a}_{1}&{a}_{2}&{a}_{3}&{a}_{4}&{a}_{5}\\
+    0&0&0&1&0&0&0\\
+    0&0&0&0&{a}_{6}&{a}_{7}&{a}_{8}\\
+    0&0&0&0&0&1&0\\
+    0&0&0&0&0&0&{a}_{9}\\
+    0&0&0&0&0&0&0\end{pmatrix} \mapsto \begin{pmatrix}
+        t^2 & \\
+        - a_1 - a_2 t & t^2 \\
+        -a_3 -a_4 t & -a_6 - a_7t & t^2 \\
+        - a_5 & -a_8 & -a_9 & t
+\end{pmatrix}
+$$
+coming from the shapes of the nested sequence of subtableaux of $\tau$ 
+$$
+\young(11,2) \subset \young(112,2) \subset \young(112,23) \subset \young(112,233)
+$$
+so $I = \left({a}_{8},{a}_{6},{a}_{1},{a}_{9},{a}_{3}\right)$. 
+Its multidegree is
+% \todo{is} 
+$$
+\mdeg I 
+% = \alpha_1(\alpha_1 + \hbar)(\alpha_1 + \alpha_2)(\alpha_2)(\alpha_3)
+= (\alpha_1) (\alpha_1 + \alpha_2) (\alpha_2) (\alpha_2 + \alpha_3) (\alpha_3)
+$$ 
+So its equivariant multiplicity (at zero) is 
+$$
+\varepsilon^{T\times\CC^\times}_0(I) = 
+% \frac{1}{(\alpha_1 + \alpha_2 + \hbar)(\alpha_1 + \alpha_2 + \alpha_3)(\alpha_2 + \hbar)(\alpha_2 + \alpha_3)}
+\frac 1 {(\alpha_1 + \hbar)(\alpha_1 + \alpha_2 + \hbar) (\alpha_1 + \alpha_2 + \alpha_3)(\alpha_2 + \hbar)}
+$$
+Using M2 we find that $I$ has Hilbert series
+\[
+    \frac{1}{\left(1-{T}_{0}{T}_{1}{T}_{2}\right)\left(1-{T}_{0}{T}_{1}{T}_{3}\right)\left(1-{T}_{1}{T}_{3}\right)\left(1-{T}_{0}{T}_{3}\right)}
+\]
+Using JB, the character of the corresponding simple $L$ is 
+% IC[5] =
+\[
+    \ch L = [2|3|2|1]+[3|2|1|2]+(q+q^{-1})[3|2|2|1]
+\]
+So 
+{\small 
+\[
+    \barD(L) = \frac{\left({a}_{1}{a}_{2}q^{2}+{a}_{2}^{2}q^{2}+{a}_{2}{a}_{3}q^{2}+{a}_{1}^{2}q+2\,{a}_{1}{a}_{2}q+2\,{a}_{2}^{2}q+{a}_{1}{a}_{3}q+{a}_{1}{a}_{2}+{a}_{2}^{2}+{a}_{2}{a}_{3}\right)}{\left(q\right)\left({a}_{2}\right)\left({a}_{1}\right)\left({a}_{1}+{a}_{2}\right)\left({a}_{1}+{a}_{2}+{a}_{
+    3}\right)\left({a}_{1}+2\,{a}_{2}\right)\left({a}_{1}+2\,{a}_{2}+{a}_{3}\right)}
+\]}
+and evaluating at $q = 1$ we recover
+\[
+    \frac{1}{\left({a}_{2}\right)\left({a}_{1}\right)\left({a}_{1}+{a}_{2}\right)\left({a}_{1}+{a}_{2}+{a}_{3}\right)}    
+\]
 \end{description}
 
 %
