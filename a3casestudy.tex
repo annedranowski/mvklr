@@ -451,10 +451,28 @@ In other words, the MV cycle is $\AA^n = \spec \CC[a_1..a_n]$. Its multidegree i
 \[
     \varepsilon_0^{T\times\CC^\times}(\AA^n) = \frac{1}{(\alpha)(\alpha + \hbar)\cdots(\alpha + (n-1)\hbar)}
 \]
-Compare with the corresponding irreducible character 
+Compare with the corresponding irreducible character. In JB we do 
+\begin{verbatim}
+    SetCartan("a",1);
+    Compute([1]); 
+\end{verbatim} 
+to find 
+\begin{verbatim}
+    IC = 1
+\end{verbatim}
+The function \texttt{Compute} takes a weight $\nu$ and finds e.g.\ a matrix of irreducible characters. In this case, the argument is valued in $\NN$. In general the argument is valued in $\NN^I$ so that weight $\nu = a\alpha_1 + b\alpha_2 + \cdots + c \alpha_{n-1}$ is input as \texttt{[a|b|..|c]}. 
+We try a couple more to deduce a probably well-known to the rest of the world fact.
+{\scriptsize
+\begin{verbatim}
+    Compute([2]); IC = (q+q^-1)[1|1]; 
+    Compute([3]); IC = (q^3+2*q+2*q^-1+q^-3)[1|1|1]; 
+    Compute([4]); IC = (q^6+3*q^4+5*q^2+6+5*q^-2+3*q^-4+q^-6)[1|1|1|1];
+\end{verbatim}}
+We deduce that the simple of weight $n\alpha$ has irreducible character 
 \[
-???     
+    \frac{[n]!}{n!\alpha^n}
 \]
+where $[n]!$ denotes the $q$-factorial. Setting $q = 1$ gives $\frac 1 {\alpha^n}$ as expected.
 % \small$$\left[\begin{BMAT}{ccc:cc:cc:c}{ccc:cc:cc:c}
 %     0&1&0&0&0&0&0&0\\
 %     0&0&1&0&0&0&0&0\\
