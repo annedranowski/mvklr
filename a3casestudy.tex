@@ -1,6 +1,7 @@
 \documentclass[11pt]{article}
 %
 \usepackage{basic}
+\newcommand{\tinydots}{\hbox to 1em{.\hss.\hss.}}
 % 
 \newcommand{\anne}[1]{{\color{pink!50!blue}Anne:~#1}}
 \newcommand{\joel}[1]{{\color{red!50!orange}Joel:~#1}}
@@ -57,7 +58,7 @@ For the time being we use two equivalent conventions:
     \item[{\bf 1.} $n_\bullet = (0,1,0,1,0,1)$:] 
     % $; $\lambda = (4,3,1,0)$ and $\mu = (3,2,2,1)$ 
     \[
-        w[n_\bullet] ={\color{red}3.2.12} = {\color{blue}21.2.3} \qquad \lambda = (4,3,1,0) \ge \mu = (3,2,2,1)
+        \underline{w}[n_\bullet] ={\color{red}3.2.12} = {\color{blue}21.2.3} \qquad \lambda = (4,3,1,0) \ge \mu = (3,2,2,1)
     \]
 % 
 % \begin{figure}[ht!]
@@ -145,9 +146,9 @@ Using Jon Brundan's program, the irreducible character of the simple KLR module 
 \[
     \ch L = [1|2|3|2]+(q+q^{-1})[1|3|2|2]+(q+q^{-1})[3|1|2|2]+[3|2|1|2]
 \]
-\anne{Now, I am not sure whether these words should be read using the red convention or the blue. But, according to Joel, (according to Elie,) $\barD(L)$  is obtained from $\ch L$ by replacing each $w[i_1..i_4]$ by 
-$$\barD_{w[i_1..i_4]}:= \frac 1 {\alpha_{i_1}(\alpha_{i_1} + \alpha_{i_2})(\alpha_{i_1} + \alpha_{i_2} + \alpha_{i_3})(\alpha_{i_1}+\alpha_{i_2} + \alpha_{i_3}+\alpha_{i_4})}$$ and summing. In fact, the thing that seems to work is reading these guys in reverse---Elie's convention??---i.e.\ replacing $w[i_1..i_4]$ by 
-$$\barD_{w[i_1..i_4]}:= \frac 1 {\alpha_{i_4}(\alpha_{i_3} + \alpha_{i_4})(\alpha_{i_2} + \alpha_{i_3} + \alpha_{i_4})(\alpha_{i_1}+\alpha_{i_2} + \alpha_{i_3}+\alpha_{i_4})}$$ 
+\anne{Now, I am not sure whether these words should be read using the red convention or the blue. But, according to Joel, (according to Elie,) $\barD(L)$  is obtained from $\ch L$ by replacing each $\underline{w}[i_1..i_4]$ by 
+$$\barD_{\underline{w}[i_1..i_4]}:= \frac 1 {\alpha_{i_1}(\alpha_{i_1} + \alpha_{i_2})(\alpha_{i_1} + \alpha_{i_2} + \alpha_{i_3})(\alpha_{i_1}+\alpha_{i_2} + \alpha_{i_3}+\alpha_{i_4})}$$ and summing. In fact, the thing that seems to work is reading these guys in reverse---Elie's convention??---i.e.\ replacing $\underline{w}[i_1..i_4]$ by 
+$$\barD_{\underline{w}[i_1..i_4]}:= \frac 1 {\alpha_{i_4}(\alpha_{i_3} + \alpha_{i_4})(\alpha_{i_2} + \alpha_{i_3} + \alpha_{i_4})(\alpha_{i_1}+\alpha_{i_2} + \alpha_{i_3}+\alpha_{i_4})}$$ 
 In this case, we find % something ghastly
 {\tiny
 $$
@@ -169,7 +170,7 @@ as desired! I'll take this approach in all subsequent calculations, sans annotat
 \item[{\bf 2.} $n_\bullet = (0,0,1,1,0,0)$:] 
 % $\lambda = (3,2,0,0)$ and $\mu = (2,1,1,1)$ \hfill 
 \[
-    w[n_\bullet] = {\color{red} 2.123} = {\color{blue} 2.321} \qquad  \lambda = (3,2,0,0) \ge \mu = (2,1,1,1)
+    \underline{w}[n_\bullet] = {\color{red} 2.123} = {\color{blue} 2.321} \qquad  \lambda = (3,2,0,0) \ge \mu = (2,1,1,1)
 \]
 \[
     \begin{gathered}
@@ -229,7 +230,7 @@ and evaluating at $q = 1$ we recover
 \item[{\bf 3.} $n_\bullet = (0,1,0,0,1,0)$:] 
 % $\lambda = (2,2,0,0)$ and $\mu = (1,1,1,1)$ \hfill 
 \[
-w[n_\bullet] =  {\color{red}23.12} = {\color{blue}21.32} \qquad \lambda = (2,2,0,0) \ge \mu = (1,1,1,1)  
+\underline{w}[n_\bullet] =  {\color{red}23.12} = {\color{blue}21.32} \qquad \lambda = (2,2,0,0) \ge \mu = (1,1,1,1)  
 \]
 \[
     \begin{gathered}
@@ -281,7 +282,7 @@ Note that it is symmetric and that there are no $q$'s.
 \item[{\bf 4.} $n_\bullet = (1,0,0,1,1,0)$:] 
 % $\lambda = (2,2,0,0)$ and $\mu = (1,1,1,1)$ \hfill 
 \[
-w[n_\bullet] = {\color{red}23.2.1} = {\color{blue}1.2.32} \qquad \lambda = (2,2,0,0) \ge \mu = (1,1,1,1)
+\underline{w}[n_\bullet] = {\color{red}23.2.1} = {\color{blue}1.2.32} \qquad \lambda = (2,2,0,0) \ge \mu = (1,1,1,1)
 \]
 \[
 \begin{gathered}
@@ -337,7 +338,7 @@ and evaluating at $q = 1$ we recover
 \item[{\bf 5.} $n_\bullet = (1,0,0,2,0,1)$:] 
 % $\lambda = (3,3,1,0)$ and $\mu = (2,2,2,1)$ \hfill 
 \[
-    w[n_\bullet] = {\color{red} 3.2.2.1} = {\color{blue} 1.2.2.3} \qquad \lambda = (3,3,1,0) \ge \mu = (2,2,2,1)
+    \underline{w}[n_\bullet] = {\color{red} 3.2.2.1} = {\color{blue} 1.2.2.3} \qquad \lambda = (3,3,1,0) \ge \mu = (2,2,2,1)
 \]
 \[
 \begin{gathered}
@@ -366,7 +367,7 @@ coming from the shapes of the nested sequence of subtableaux of $\tau$
 $$
 \young(11,2) \subset \young(112,2) \subset \young(112,23) \subset \young(112,233)
 $$
-so $I = \left({a}_{8},{a}_{6},{a}_{1},{a}_{9},{a}_{3}\right)$. 
+so $I = \left({a}_{1},{a}_{3},{a}_{6},{a}_{8},{a}_{9}\right)$. 
 Note that $w(\tau) = {123\atop 132}$ and the first entry in the last column of the matrix above is free.
 Its multidegree is
 % \todo{is} 
@@ -401,6 +402,7 @@ and evaluating at $q = 1$ we recover
     \frac{1}{\left({a}_{2}\right)\left({a}_{1}\right)\left({a}_{1}+{a}_{2}\right)\left({a}_{1}+{a}_{2}+{a}_{3}\right)}    
 \]
 \end{description}
+% 
 \section*{Takeaways?}
 Elie? Joel? Todo.. 
 \joel{One think that came to my mind from these examples is the following:
@@ -417,6 +419,53 @@ are the ones where we have a very simple choice of $\mu$ (like all 1s)
 for the MVy isomorphism. Is this true? Can these be related to each?
 
 What about simpler examples, in A1 or A2?}
+
+\section*{Smaller examples}
+% 
+\subsection*{Type $A_1$}
+$\nu = n\alpha = \underbrace{(\alpha)+\cdots+(\alpha)}_{n}$ and $n_\bullet = (n)$. There is just one partition for each $\nu$, and hence just one MV cycle. 
+\[
+\underline{w}[n_\bullet] = 1.1\dots 1\qquad \lambda = (2n)\ge \mu = (n,n)    
+\]
+The MV polytope will just be the line segment $[0,n]$ in $\RR\alpha$. The tableau will be 
+\[
+\young(11\tinydots122\tinydots 2)    
+\]
+The ideal of the corresponding MV cycle in $\CC[a_1..a_n]$ is got by imposing the vacuous condition $A^{2n} = 0$ on 
+\[
+    A = \left[\begin{BMAT}{cccc:cccc}{cccc:cccc}
+        0 & 1 & & & & & & \\
+          & 0 & 1 & & & & &  \\
+              &  & \ddots & 1 & & & & \\
+              &  &  & 0  & a_1 & a_2 & \cdots & a_n \\
+              &  &  &    & 0 & 1 & & \\
+              &  &  &    &  & 0 & 1 & \\ 
+              &  &  &    &  &   & \ddots & 1 \\
+              &  &  &    &  &   &  & 0 
+    \end{BMAT}\right]\mapsto \begin{bmatrix}
+        t^n & 0 \\
+        -a_1 - a_2 t - \cdots - a_n t^{n-1} & t^n 
+    \end{bmatrix}
+\]
+In other words, the MV cycle is $\AA^n = \spec \CC[a_1..a_n]$. Its multidegree is just 1, while its equivariant multiplicity is
+\[
+    \varepsilon_0^{T\times\CC^\times}(\AA^n) = \frac{1}{(\alpha)(\alpha + \hbar)\cdots(\alpha + (n-1)\hbar)}
+\]
+Compare with the corresponding irreducible character 
+\[
+???     
+\]
+% \small$$\left[\begin{BMAT}{ccc:cc:cc:c}{ccc:cc:cc:c}
+%     0&1&0&0&0&0&0&0\\
+%     0&0&1&0&0&0&0&0\\
+%     0&0&0&{a}_{1}&{a}_{2}&{a}_{3}&{a}_{4}&{a}_{5}\\
+%     0&0&0&0&1&0&0&0\\
+%     0&0&0&0&0&{a}_{6}&{a}_{7}&{a}_{8}\\
+%     0&0&0&0&0&0&1&0\\
+%     0&0&0&0&0&0&0&{a}_{9}\\
+%     0&0&0&0&0&0&0&0\end{BMAT}\right]
+% 
+\subsection*{Type $A_2$}
 %
 % import bibliography from tex.bib file
 %
