@@ -451,7 +451,14 @@ In other words, the MV cycle is $\AA^n = \spec \CC[a_1..a_n]$. Its multidegree i
 \[
     \varepsilon_0^{T\times\CC^\times}(\AA^n) = \frac{1}{(\alpha)(\alpha + \hbar)\cdots(\alpha + (n-1)\hbar)}
 \]
-Compare with the corresponding irreducible character. In JB we do 
+Its Hilbert series is
+{\tiny
+\[
+    \frac{1}{\left(1-e^\alpha\right)\left(1-e^\alpha e^\hbar\right)\left(1-e^\alpha {e^\hbar}^{2}\right)\left(1-e^\alpha {e^\hbar}^{3}\right)\left(1-e^\alpha {e^\hbar}^{4}\right)\left(1-e^\alpha {e^\hbar}^{5}\right)\left(1-e^\alpha {e^\hbar}^{6}\right)\left(1-e^\alpha {e^\hbar}^{7}\right)\left(1-e^\alpha {e^\hbar}^{8}\right)}  
+\]}
+TODO: replace ${e^\hbar}^k$ by $e^{k\hbar}$ everywhere. ALSO: consider Elie's, Daniel's suggestion of replacing $\hbar$ by $\alpha_0$ where $\alpha_0 = \hbar + \widetilde\alpha$ and $\widetilde\alpha$ is the maximal root? 
+
+Comparing with the corresponding irreducible character, in JB we do 
 \begin{verbatim}
     SetCartan("a",1);
     Compute([1]); 
