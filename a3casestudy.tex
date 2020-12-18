@@ -117,7 +117,7 @@ The equivariant multiplicity of $I$ at zero is got by normalizing the multidegre
 $$
 % boo boo persisting: \varepsilon^{T\times\CC^\times}_0(I) = \frac{1}{(\alpha_1 + \alpha_2 + \hbar)(\alpha_2 + \hbar) (\alpha_2 + \alpha_3) (\alpha_3 )}
 % \varepsilon^{T\times\CC^\times}_0(I) = \frac{1}{(\alpha_1 + \alpha_2 + \alpha_3)(\alpha_2 + \hbar) (\alpha_2 + \alpha_3) (\alpha_3 )}
-\varepsilon^{T\times\CC^\times}_0(I) = \frac{1}{(\alpha_1 + \alpha_2 + \hbar)(\alpha_2)(\alpha_2+\hbar)(\alpha_2 + \alpha_3)}
+\barD_\hbar(I) = \varepsilon^{T\times\CC^\times}_0(I) = \frac{1}{(\alpha_1 + \alpha_2 + \hbar)(\alpha_2)(\alpha_2+\hbar)(\alpha_2 + \alpha_3)}
 $$
 
 Using Macaulay2 we find that $I$ has $T\times\CC^\times$-graded Hilbert series
@@ -144,7 +144,7 @@ Jon Brundan's program outputs dual canonical basis elements.
 Using Jon Brundan's program, the irreducible character of the simple KLR module $L$ with the given Lusztig datum is 
 % IC[4] = 
 \[
-    \ch L = [1|2|3|2]+(q+q^{-1})[1|3|2|2]+(q+q^{-1})[3|1|2|2]+[3|2|1|2]
+    \ch_q L = [1|2|3|2]+(q+q^{-1})[1|3|2|2]+(q+q^{-1})[3|1|2|2]+[3|2|1|2]
 \]
 \anne{Now, I am not sure whether these words should be read using the red convention or the blue. But, according to Joel, (according to Elie,) $\barD(L)$  is obtained from $\ch L$ by replacing each $\underline{w}[i_1..i_4]$ by 
 $$\barD_{\underline{w}[i_1..i_4]}:= \frac 1 {\alpha_{i_1}(\alpha_{i_1} + \alpha_{i_2})(\alpha_{i_1} + \alpha_{i_2} + \alpha_{i_3})(\alpha_{i_1}+\alpha_{i_2} + \alpha_{i_3}+\alpha_{i_4})}$$ and summing. In fact, the thing that seems to work is reading these guys in reverse---Elie's convention??---i.e.\ replacing $\underline{w}[i_1..i_4]$ by 
@@ -152,7 +152,7 @@ $$\barD_{\underline{w}[i_1..i_4]}:= \frac 1 {\alpha_{i_4}(\alpha_{i_3} + \alpha_
 In this case, we find % something ghastly
 {\tiny
 $$
-\barD (L) =
+\barD_q (L) =
 % \hspace*{-5.5cm}
 \begin{aligned}{a}_{1}^{2}{a}_{2}q^{2}+5\,{a}_{1}{a}_{2}^{2}q^{2}+4\,{a}_{2}^{3}q^{2}+{a}_{1}^{2}{a}_{3}q^{2}+6\,{a}_{1}{a}_{2}{a}_{3}q^{2}\\
     +5\,{a}_{2}^{2}{a}_{3}q^{2}+{a}_{1}{a}_{3}^{2}q^{2}+{a}_{2}{a}_{3}^{2}q^{2}+2\,{a}_{1}^{2}{a}_{2}q+6\,{a}_{1}{a}_{2}^{2}q+8\,{a}_{2}^{3}q \\ 
@@ -206,7 +206,7 @@ $$
 % double check in M2 which gives $\left({T}_{0}+{T}_{1}\right)\left({T}_{0}\right)$
 So its equivariant multiplicity (at zero) is   
 $$
-\varepsilon^{T\times\CC^\times}_0(I) = \frac{1}{(\alpha_1 + \alpha_2 + \alpha_3)(\alpha_2)(\alpha_2 + \alpha_3)(\alpha_3)}
+\barD_\hbar(I) = \varepsilon^{T\times\CC^\times}_0(I) = \frac{1}{(\alpha_1 + \alpha_2 + \alpha_3)(\alpha_2)(\alpha_2 + \alpha_3)(\alpha_3)}
 $$
 Using M2 we find that $I$ has Hilbert series
 $$\frac{1}{\left(1-{T}_{0}{T}_{1}{T}_{2}\right)\left(1-{T}_{1}{T}_{2}\right)\left(1-{T}_{2}\right)\left(1-{T}_{1}\right)}$$
@@ -214,12 +214,12 @@ $$\frac{1}{\left(1-{T}_{0}{T}_{1}{T}_{2}\right)\left(1-{T}_{1}{T}_{2}\right)\lef
 Using Jon Brundan's program, the character of the corresponding simple $L$ is 
 % IC[1] = 
 \[
-    \ch L = (q+q^{-1})[1|2|2|3]+[1|2|3|2]+[2|1|2|3]   
+    \ch_q L = (q+q^{-1})[1|2|2|3]+[1|2|3|2]+[2|1|2|3]   
 \]
 so 
 {\tiny
 \[
-\barD (L) = 
+\barD_q (L) = 
 \frac{{a}_{1}{a}_{2}q^{2}+{a}_{2}^{2}q^{2}+{a}_{2}{a}_{3}q^{2}+2\,{a}_{2}^{2}q+{a}_{1}{a}_{3}q+2\,{a}_{2}{a}_{3}q+{a}_{3}^{2}q+{a}_{1}{a}_{2}+{a}_{2}^{2}+{a}_{2}{a}_{3}}{\left(q\right)\left({a}_{3}\right)\left({a}_{2}\right)\left({a}_{2}+{a}_{3}\right)\left(2\,{a}_{2}+{a}_{3}\right)\left({a}_{1}+{a}_{2}+{a}_{3}\right)\left({a}_{1}+2\,{a}_{2}+{a}_{3}\right)}  
 \]}
 and evaluating at $q = 1$ we recover 
@@ -264,7 +264,7 @@ $$
 $$
 So its equivariant multiplicity (at zero) is  
 $$
-\varepsilon^{T\times\CC^\times}_0(I) = \frac{1}{(\alpha_1 + \alpha_2)(\alpha_1 + \alpha_2 + \alpha_3)(\alpha_2)(\alpha_2 + \alpha_3)}
+\barD_\hbar(I) = \varepsilon^{T\times\CC^\times}_0(I) = \frac{1}{(\alpha_1 + \alpha_2)(\alpha_1 + \alpha_2 + \alpha_3)(\alpha_2)(\alpha_2 + \alpha_3)}
 $$
 Using M2 we find that $I$ has Hilbert series 
 \[
@@ -273,7 +273,7 @@ Using M2 we find that $I$ has Hilbert series
 Using JB, the character of the corresponding simple $L$ is 
 % IC[2] 
 \[
-    \ch L = [2|1|3|2]+[2|3|1|2]
+    \ch_q L = [2|1|3|2]+[2|3|1|2]
 \]
 Note that it is symmetric and that there are no $q$'s. 
 \[
@@ -314,7 +314,7 @@ $$
 $$
 So its equivariant multiplicity (at zero) is  
 $$
-\varepsilon^{T\times\CC^\times}_0(I) = \frac{1}{(\alpha_1)(\alpha_1 + \alpha_2)(\alpha_2 + \alpha_3)(\alpha_3)}
+\barD_\hbar(I) = \varepsilon^{T\times\CC^\times}_0(I) = \frac{1}{(\alpha_1)(\alpha_1 + \alpha_2)(\alpha_2 + \alpha_3)(\alpha_3)}
 $$
 Using M2 we find that $I$ has Hilbert series 
 \[
@@ -323,13 +323,14 @@ Using M2 we find that $I$ has Hilbert series
 Using JB, the character of the corresponding simple $L$ is 
 % IC[3] = 
 \[
-\ch L = [2|1|2|3]+(q+q^{-1})[2|2|1|3]+(q+q^{-1})[2|2|3|1]+[2|3|2|1]    
+\ch_q L = [2|1|2|3]+(q+q^{-1})[2|2|1|3]+(q+q^{-1})[2|2|3|1]+[2|3|2|1]    
 \]
 So 
-{\small \[
-\barD (L) =     
+{\scriptsize \begin{align*}
+&\barD_q (L) = \\
+&    
 \frac{{a}_{1}{a}_{2}q^{2}+{a}_{2}^{2}q^{2}+{a}_{1}{a}_{3}q^{2}+{a}_{2}{a}_{3}q^{2}+{a}_{1}^{2}q+{a}_{1}{a}_{2}q+{a}_{2}{a}_{3}q+{a}_{3}^{2}q+{a}_{1}{a}_{2}+{a}_{2}^{2}+{a}_{1}{a}_{3}+{a}_{2}{a}_{3}}{\left(q\right)\left({a}_{3}\right)\left({a}_{2}+{a}_{3}\right)\left({a}_{1}\right)\left({a}_{1}+{a}_{2}\right)\left({a}_{1}+{a}_{2}+{a}_{3}\right)\left({a}_{1}+2\,{a}_{2}+{a}_{3}\right)}
-\]}
+\end{align*}}
 and evaluating at $q = 1$ we recover 
 \[
     \frac{1}{\left({a}_{3}\right)\left({a}_{2}+{a}_{3}\right)\left({a}_{1}\right)\left({a}_{1}+{a}_{2}\right)}
@@ -378,7 +379,7 @@ $$
 $$ 
 So its equivariant multiplicity (at zero) is 
 $$
-\varepsilon^{T\times\CC^\times}_0(I) = 
+\barD_\hbar(I) \equiv \varepsilon^{T\times\CC^\times}_0(I) = 
 % \frac{1}{(\alpha_1 + \alpha_2 + \hbar)(\alpha_1 + \alpha_2 + \alpha_3)(\alpha_2 + \hbar)(\alpha_2 + \alpha_3)}
 \frac 1 {(\alpha_1 + \hbar)(\alpha_1 + \alpha_2 + \hbar) (\alpha_1 + \alpha_2 + \alpha_3)(\alpha_2 + \hbar)}
 $$
@@ -389,20 +390,45 @@ Using M2 we find that $I$ has Hilbert series
 Using JB, the character of the corresponding simple $L$ is 
 % IC[5] =
 \[
-    \ch L = [2|3|2|1]+[3|2|1|2]+(q+q^{-1})[3|2|2|1]
+    \ch_q L = [2|3|2|1]+[3|2|1|2]+(q+q^{-1})[3|2|2|1]
 \]
 So 
-{\small 
-\[
-    \barD(L) = \frac{\left({a}_{1}{a}_{2}q^{2}+{a}_{2}^{2}q^{2}+{a}_{2}{a}_{3}q^{2}+{a}_{1}^{2}q+2\,{a}_{1}{a}_{2}q+2\,{a}_{2}^{2}q+{a}_{1}{a}_{3}q+{a}_{1}{a}_{2}+{a}_{2}^{2}+{a}_{2}{a}_{3}\right)}{\left(q\right)\left({a}_{2}\right)\left({a}_{1}\right)\left({a}_{1}+{a}_{2}\right)\left({a}_{1}+{a}_{2}+{a}_{
+{\scriptsize 
+\begin{align*}
+    &\barD_q(L) \\
+    &= \frac{\left({a}_{1}{a}_{2}q^{2}+{a}_{2}^{2}q^{2}+{a}_{2}{a}_{3}q^{2}+{a}_{1}^{2}q+2\,{a}_{1}{a}_{2}q+2\,{a}_{2}^{2}q+{a}_{1}{a}_{3}q+{a}_{1}{a}_{2}+{a}_{2}^{2}+{a}_{2}{a}_{3}\right)}{\left(q\right)\left({a}_{2}\right)\left({a}_{1}\right)\left({a}_{1}+{a}_{2}\right)\left({a}_{1}+{a}_{2}+{a}_{
     3}\right)\left({a}_{1}+2\,{a}_{2}\right)\left({a}_{1}+2\,{a}_{2}+{a}_{3}\right)}
-\]}
+\end{align*}}
 and evaluating at $q = 1$ we recover
 \[
     \frac{1}{\left({a}_{2}\right)\left({a}_{1}\right)\left({a}_{1}+{a}_{2}\right)\left({a}_{1}+{a}_{2}+{a}_{3}\right)}    
 \]
 \end{description}
+\subsection*{Summary}
+Note that we are able to read off the $T$-eqms from the polytopes. The denominators are products of edge directions emanating from the zero vertex, with multiplicity. As to the loop rotation I am not sure. 
+%   
+\begin{table}[h]
+    % 
+    \small
+    \begin{tabular}{cccc}
+        $n_\bullet$ & {\color{blue}$\underline{w}$} & $w(\tau)$ & $\barD_\hbar^{-1}$ \\
+        \hline 
+        $(0,1,0,1,0,1)$ & 21.2.3 & $213$ & ${(\alpha_1 + \alpha_2 + \hbar) (\alpha_2) (\alpha_2 + \hbar) (\alpha_2 + \alpha_3)}$ \\
+        $(0,0,1,1,0,0)$ & 2.321 & $231$ & ${(\alpha_1 + \alpha_2 + \alpha_3)(\alpha_2)(\alpha_2 + \alpha_3)(\alpha_3)}$ \\
+        $(0,1,0,0,1,0)$ & 21.32 & $213$ & ${(\alpha_1 + \alpha_2)(\alpha_1 + \alpha_2 + \alpha_3)(\alpha_2)(\alpha_2 + \alpha_3)}$ \\
+        $(1,0,0,1,1,0)$ & 1.2.32 & $132$ & ${(\alpha_1)(\alpha_1 + \alpha_2)(\alpha_2 + \alpha_3)(\alpha_3)}$ \\
+        $(1,0,0,2,0,1)$ & 1.2.2.3 & $132$ & ${(\alpha_1 + \hbar)(\alpha_1 + \alpha_2 + \hbar)(\alpha_1 + \alpha_2 + \alpha_3)(\alpha_2 + \hbar)}$
+    \end{tabular}
+    \caption{$\alpha_1 + 2\alpha_2 + \alpha_3$}
+    \label{table:ta}
+    % 
+    \end{table}
 % 
+\section*{Questions}
+\begin{enumerate}
+    \item For Elie: Remind me how we tell what are the words that show up in $\ch_q$
+    \item For Joel: Do the words showing up in $\ch_q(L)$ tell us about the support of $L$? In particular, can we associate to these words MV cycles? I thought not, since they need not be ``good'' words.
+\end{enumerate}
 \section*{Takeaways?}
 Elie? Joel? Todo.. 
 \joel{One think that came to my mind from these examples is the following:
@@ -452,11 +478,14 @@ In other words, the MV cycle is $\AA^n = \spec \CC[a_1..a_n]$. Its multidegree i
     \varepsilon_0^{T\times\CC^\times}(\AA^n) = \frac{1}{(\alpha)(\alpha + \hbar)\cdots(\alpha + (n-1)\hbar)}
 \]
 Its Hilbert series is
-{\tiny
+{
 \[
-    \frac{1}{\left(1-e^\alpha\right)\left(1-e^\alpha e^\hbar\right)\left(1-e^\alpha {e^\hbar}^{2}\right)\left(1-e^\alpha {e^\hbar}^{3}\right)\left(1-e^\alpha {e^\hbar}^{4}\right)\left(1-e^\alpha {e^\hbar}^{5}\right)\left(1-e^\alpha {e^\hbar}^{6}\right)\left(1-e^\alpha {e^\hbar}^{7}\right)\left(1-e^\alpha {e^\hbar}^{8}\right)}  
+    \frac{1}{\left(1-e^\alpha\right)\left(1-e^{\alpha + \hbar}\right)\left(1-e^{\alpha+2\hbar}\right)
+    % \left(1-e^{\alpha + 3\hbar}\right)\left(1-e^{\alpha + 4\hbar} \right)\left(1-e^{\alpha + 5\hbar} \right)\left(1-e^{\alpha+6\hbar}\right)\left(1-e^{\alpha+7\hbar} \right)
+    \cdots 
+    \left(1-e^{\alpha+(n-1)\hbar} \right)}  
 \]}
-TODO: replace ${e^\hbar}^k$ by $e^{k\hbar}$ everywhere. ALSO: consider Elie's, Daniel's suggestion of replacing $\hbar$ by $\alpha_0$ where $\alpha_0 = \hbar + \widetilde\alpha$ and $\widetilde\alpha$ is the maximal root? 
+TODO: consider Elie's, Daniel's suggestion of replacing $\hbar$ by $\alpha_0$ where $\alpha_0 = \hbar + \widetilde\alpha$ and $\widetilde\alpha$ is the maximal root? 
 
 Comparing with the corresponding irreducible character, in JB we do 
 \begin{verbatim}
