@@ -1,0 +1,72 @@
+\documentclass[11pt]{article}
+\usepackage[usenames]{color} %pour la couleur
+\usepackage[applemac]{inputenc}
+\usepackage{amssymb} %maths
+\usepackage{amsmath} %maths
+\usepackage{mathabx}
+\usepackage{amsthm}
+\usepackage[all]{xy}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage[T1]{fontenc}
+\usepackage[left=3.5cm,right=3.5cm,top=3cm,bottom=3.5cm]{geometry}
+\usepackage{authblk}
+\usepackage{cleveref}
+\usepackage{filecontents}
+\usepackage{graphics} 
+\usepackage{graphicx}
+\usepackage{pstricks,pst-node} 
+\usepackage{tikz} 
+\usepackage{xcolor}
+\usepackage{shuffle}
+\usepackage{lipsum}
+
+
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
+ \begin{document}
+\theoremstyle{plain}
+\newtheorem{deftn}{Definition}[section]
+\newtheorem{lem}[deftn]{Lemma}
+\newtheorem{prop}[deftn]{Proposition}
+\newtheorem{thm}[deftn]{Theorem}
+\newtheorem{cor}[deftn]{Corollary}
+\newtheorem{conj}[deftn]{Conjecture}
+\newtheorem{Question}[deftn]{Question}
+\newtheorem{Fact}{Evidence}
+\newtheorem{assump}{Assumption}[section]
+\renewcommand{\theassump}{\Alph{assump}}
+\newtheorem{conjintro}{Conjecture}
+\newtheorem{thmintro}{Theorem}
+
+\theoremstyle{definition}
+\newtheorem{ex}[deftn]{Example}
+\newtheorem{rk}[deftn]{Remark}
+
+
+\newcommand{\CQ}{\mathcal{C}_Q}
+\newcommand{\CZ}{\mathcal{C}_{\mathbb{Z}}}
+\newcommand{\Atn}{\mathcal{A}_t (\mathfrak{n})}
+\newcommand{\CN}{\mathbb{C}[N]}
+
+
+\title{KLR modules in type $A_1^{(1)}$}
+  \author{Elie Casbi and Anne Dranowski and Joel Kamnitzer}
+ 
+     \date{}
+
+\maketitle
+
+\section{A couple of computations}
+
+Consider the unipotent cell of $\CN$ associated with the reduced word $(1,0,1,0)$. Then the $\bar{D}$ of the simple modules of the  initial seed (i.e. the standard seed corresponding to the same reduced word) are given by 
+$$ \frac{1}{\alpha_1} \quad  \frac{1}{\alpha_1^2(\delta + \alpha_1)} \quad  \frac{1}{\alpha_1^3(\delta + \alpha_1)^2(2 \delta + \alpha_1)} \quad \frac{1}{\alpha_1^4(\delta + \alpha_1)^3(2 \delta + \alpha_1)^2(3 \delta + \alpha_1)} . $$ 
+Conjecturally, when considering the reduced word $(1,0,1,0, \ldots , 1,0)$ with $n$ occurrences of $0$ and $1$ we will get fractions of the form 
+$$  \frac{1}{\alpha_1^n(\delta + \alpha_1)^{n-1} \cdots ((n-1) \delta + \alpha_1)} . $$ 
+
+ \end{document}
