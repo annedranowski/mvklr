@@ -533,6 +533,48 @@ Let's look at a bunch of characters of weight $\nu = a\alpha_1 + b\alpha_2$ with
 \end{adjustbox}
 \end{table}
 }
+\section*{KLR side}
+\begin{lemma}\cite{kamnitzer2019category}
+    There is a functor $\Theta$ such that for any integral pair $(\vi,\va)$
+    \[
+    W_{\vi,\va}\Theta(M) = d(\vi,\va) M    
+    \]
+\end{lemma}
+The proof of this lemma defines the vector space 
+\[
+\Theta(M) = \bigoplus_{(\vi,\va)\text{ integral}} d(\vi,\va) M \delta(\vi,\va)
+\]
+where $\delta(\vi,\va)$ is a formal symbol introduced to keep track of the different $(\vi,\va)$ giving the same $d(\vi,\va)$. 
+
+We are interested in 
+\[
+\ch M = \sum \dim (d(\vi,\va) M) e^{\wt (\delta(\vi,\va) )}    
+\]
+or 
+\[
+\ch_q M = \sum\dim_q (d(\vi,\va) M) D_{\vi,\va}   
+\]
+where $D_{\vi,\va}$ is UNKNOWN and 
+$$\dim_q (d(\vi,\va) M) = \sum_k (\dim d(\vi,\va) M)_k q^k$$
+
+In the $A_1$ case $a\in 2\ZZ$ and $\vi$ for some reason does not matter. 
+Also, $\dim (d(\va) M)$ are all 1-dimensional, but perhaps in different degrees? Let's guess degree $\va/2$. 
+What we get is 
+\[
+    \sum_{n\in\ZZ} q^{n} D_{2n}
+\]
+Let's take $D_{a} = e^{a\alpha/2}$ and sum over $n\ge 0$. Then we get 
+\[
+    \sum_{n\ge 0} q^n e^{n\alpha} = \frac 1 {1 - qe^\alpha}
+\]
+which has asymptotics 
+\[
+\frac 1 {1 - q(1 + \alpha)}    
+\]
+If we further substitute $q = e^\hbar$ for no apparent reason and take asymptotics in $\hbar$ we find 
+\[
+    \frac 1 {1 - e^\hbar (1 + \alpha)}  \to \frac 1 {1 - (1 + \hbar) (1 + \alpha)} = \frac 1 {\alpha + \hbar + \alpha\hbar } 
+\]
 %
 % import bibliography from tex.bib file
 %
