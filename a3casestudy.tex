@@ -516,7 +516,48 @@ What if this character is itself a near zero approximation of an ``exponential''
     \frac{[n]!}{n!}\frac 1 {(1-e^\alpha)^n}
 \]
 \subsection*{Type $A_2$}
-Let's look at a bunch of characters of weight $\nu = a\alpha_1 + b\alpha_2$ with $a < b$ because I assume the results are going to be symmetric. In particular there are $\min(a,b)+1 = a+1$ partitions? 
+% 
+Let's look at a bunch of characters of weight $\nu = a\alpha_1 + b\alpha_2$ with $a \ge b$ because I think the results are going to be symmetric. Note, there are $\min(a,b)+1 = a+1$ Kostant partitions, MV cycles, etc. to consider.
+
+% This is not quite true. I said a half hour ago. Because the mdegs will not be symmetric in (a,b). But maybe up to renormalization? Idk. 
+
+{\bf Case $(a,b) = (n,1)$:} We always have 2 MV cycles. Their tableaux, words, mdegs are:
+{\small
+\[
+\begin{aligned}
+    &\young(1\dots12\dots22,3) & &\young(1\dots12\dots23,2) \\
+    &2.11\dots1 & & 12.1\dots1 \\
+    &\alpha_2 & & \alpha_1 
+\end{aligned}    
+\]}
+Their eqms are found by normalizing their mdegs wrt to the MVy embedding:
+$$\begin{aligned}
+    \frac{\alpha_2}{\mdeg(0)} &= \frac 1 {(\alpha_1) (\alpha_1 + \hbar)\cdots (\alpha_1 + (n-1)\hbar) (\alpha_1 + \alpha_2)} \\
+    \frac{\alpha_1}{\mdeg(0)} &= \frac 1 {(\alpha_1 + \hbar)\cdots(\alpha_1 + (n-1)\hbar)(\alpha_1 + \alpha_2)(\alpha_2)}
+\end{aligned}$$
+% 
+
+{\bf Case $(a,b) = (n,2)$:} We always have 3 MV cycles. Their tableaux, words, mdegs are:
+{\scriptsize
+\[
+\begin{aligned}
+    &\young(1\dots12\dots22,33) & &\young(1\dots12\dots23,23) & & \young(1\dots12\dots33,22) \\
+    &22.11\dots1 & & 2.12.1\dots1 & & 12.12.1\dots1\\
+    &(\alpha_2)(\alpha_2 + \hbar) & & (\alpha_1)(\alpha_2) & & (\alpha_1)(\alpha_1 + \hbar) 
+    % \\
+    % &\frac 1 {(\alpha_1) (\alpha_1 + \hbar)\cdots (\alpha_1 + (n-1)\hbar) (\alpha_1 + \alpha_2)} & &\frac 1 {(\alpha_1 + \hbar)\cdots(\alpha_1 + (n-1)\hbar)(\alpha_1 + \alpha_2)(\alpha_2)}
+\end{aligned}    
+\]}
+This time, to find their eqms, divide the mdegs by:
+\[
+(\alpha_1)(\alpha_1 + \hbar)\cdots(\alpha_1 + (n-1)\hbar) (\alpha_1 + \alpha_2)(\alpha_1 + \alpha_2 + \hbar) (\alpha_2) (\alpha_2 + \hbar)    
+\]
+
+{\bf Case $(a,b) = (n,3)$:} Will have 4 MV cycles\dots
+
+\subsection*{Some characters}
+No evident patterns. 
+% 
 {
 \begin{table}[ht!]
     \begin{adjustbox}{max width=\textwidth}
