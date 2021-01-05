@@ -10,8 +10,8 @@
 % 
 \maketitle
 % 
-\section{Goal}
-% Let $\nu\in Q_+$ be of height $p$. 
+\section*{Introduction}
+% 
 In \cite{baumann2019mirkovic} the authors introduce a measure $\barD:\CC[N]\to\CC(\t)$ defined by 
 \begin{equation}
     \label{eq:defbard}
@@ -20,30 +20,33 @@ In \cite{baumann2019mirkovic} the authors introduce a measure $\barD:\CC[N]\to\C
 where 
 \begin{equation}
     \label{eq:bardi}
-    \barD_{\vi} = \prod_{k=1}^p\frac{1}{\alpha_{i_1} + \cdots + \alpha_{i_k}} \qquad p = \hgt \nu 
+    \barD_{\vi} = \prod_{k=1}^p\frac{1}{\alpha_{i_1} + \cdots + \alpha_{i_k}} \qquad p = \hgt \nu \,.
 \end{equation}
 By BKK Proposition 8.4, or Thesis Theorem 3.4.2, it can be realized more invariantly as 
 \begin{equation}
     \label{eq:invbard}
     %  \qquad 
-     \barD(f)(x) = f(n_x)
+     \barD(f)(x) = f(n_x)\,.
 \end{equation}
-They (BKK, Proposition A.5) and we (Thesis, Proposition 5.4.4) show that when $f = b_Z$ is an element of the MV basis indexed by a stable MV cycle of weight $\nu$, i.e.\ $Z\subset \overline{S^\nu_+\cap S^0_-}$
+% 
+BKK, Proposition A.5 (also, Anne's Thesis, Proposition 5.4.4) shows that when $f = b_Z$ is an element of the MV basis indexed by a stable MV cycle of weight $\nu$, i.e.\ $Z\subset \overline{S^\nu_+\cap S^0_-}$
 \begin{equation}
     \label{eq:bardaseqm}
-    \barD(b_Z) = \varepsilon_{L_0}^T (Z) 
+    \barD(b_Z) = \varepsilon_{L_0}^T (Z) \,. 
 \end{equation}
 
 When $f = c_Y$ is an element of the dual semicanonical basis indexed by an irreducible component $Y$ of $\Lambda(\nu)$
 \begin{equation}
     \label{eq:bardaseu} % eu for euler 
-    \barD(c_Y) = \sum_{\vi\in\Seq(\nu)}\chi(F_{\vi}(M))\barD_{\vi} \qquad M \in Y
+    \barD(c_Y) = \sum_{\vi\in\Seq(\nu)}\chi(F_{\vi}(M))\barD_{\vi} \qquad M \in Y\,. 
 \end{equation}
 
 We would like an ``asymptotic'' $\hbar$-version of $\barD$ which manifests as a $T\times\CC^\times$-equivariant multiplicity on elements of the MV basis:
 $$
-\barD_\hbar(b_Z) = \varepsilon_{L_0}^{T\times\CC^\times} (Z) \in \CC(\t,\hbar)
+\barD_\hbar(b_Z) = \varepsilon_{L_0}^{T\times\CC^\times} (Z) \in \CC(\t,\hbar)\,..
 $$
+% 
+The right candidate for deformation is not yet clear. In \texttt{a3casestudy.tex} and \texttt{Affinesl2.tex} we calculate examples towards possible quantum and asymptotic versions of $\barD$.
 
 Recall the MVy isomorphism $\tilde\Phi : \TT_\mu\cap\cN \to G_1[t^{-1}]t^\mu$ defined by
 \begin{equation}

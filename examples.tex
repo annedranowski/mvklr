@@ -1,83 +1,22 @@
-% !TeX root = ./mvklr.tex
 
-\begin{example}[$G = \SL_3$ or $\PGL_3$]
-% 
-Let $\lambda = \omega_1 + \omega_2 = (2,1,0)$, $\mu = \omega_3 = (1,1,1)$ and consider the tableaux 
-$$\tau_1 = \young(12,3)\qquad \tau_2 = \young(13,2)$$
-These correspond to the two irreducible components of
-$$\overline{\Gr^{(2,1)}}\cap S^{(1,1)}_-\cong \overline{\OO_{(2,1)}}\cap\n
-    = \left\{\begin{bmatrix}
-    0 & a & b \\
-        & 0 & c \\
-        &   & 0 
-\end{bmatrix} : ac = 0 \right\} $$
-as follows
-$$
-X_{\tau_1} = \left\{\begin{bmatrix}
-    0 & a & b \\
-        & 0 & 0 \\
-        &   & 0 
-\end{bmatrix}\right\} \qquad
-X_{\tau_2} = \left\{\begin{bmatrix}
-    0 & 0 & b \\
-        & 0 & c \\
-        &   & 0 
-\end{bmatrix}\right\}
-$$
-The $T\times\CC^\times$-multidegree of $X_{\tau_2}$ is $\hbar + \alpha_1$ (if we normalize like PZJ---else, it'll be $2\hbar + \alpha_1$). The $T\times\CC^\times$-equivariant multiplicity of $X_{\tau_2}$ is 
-$$\frac 1{(\hbar + \alpha_1 + \alpha_2)(\hbar + \alpha_2)}$$
-\end{example}
-% 
-\begin{example}[$G = \SL_2$ or $\PGL_2$]
-    For an even simpler example take $\lambda = 2\omega_1 = (2,0)$ and $\mu = \omega_2 = (1,1)$. Then 
-    $$\overline{\Gr^{(2,0)}}\cap S^{(1,1)}_-\cong \overline{\OO_{(2,0)}\cap\n}$$
-    is irreducible, corresponds to the tableau 
-    $$\tau = \young(12)$$
-    has multidegree 1 and equivariant multiplicity $\frac 1 {\hbar + \alpha}$.  
-\end{example}
-% 
-\begin{example}
-    With Roger we checked using the MVy isomorphism that on the level of MV cycles the fusion rule gives    
-    $$
-    \young(111,23) \ast \young(12) = \young(11112,23)
-    $$
-    Does it follow that 
-    $$
-    \frac 1 {\hbar +\alpha_2} \ast \frac 1 {\hbar +\alpha_1 } = \barD_\hbar (RHS)
-    $$
-    where (I am not sure of it but) it looks like 
-    $$
-    \barD_\hbar (RHS) = \frac{7\hbar/2 + \alpha_1 + \alpha_2}{(5\hbar/2 + \alpha_1 + \alpha_2)(2\hbar + \alpha_1)(3\hbar/2 + \alpha_2)}
-    $$
-\end{example}
-% 
-In \cite{kam19} the authors are interested in the quantized shifted Yangian $Y^\lambda_\mu$ because when $\g$ is finite type and $\mu$ is dominant it is filtered and its associated graded is the coordinate ring of $\Gr^\lambda_\mu$ a transverse slice to a spherical Schubert variety in the affine Grassmannian. 
+\documentclass[11pt]{article}
 %
-\begin{theorem}\cite{kam19}
-    The category of nilpotent modules for the parity KLR algebra ${}_-P_\mu^{{\bf R}}$ is equivalent to the category of weight modules for the corresponding truncated shifted Yangian $Y^\lambda_\mu({\bf R})$.
-\end{theorem}
+\usepackage{bibsty/mvklr}
+\title{Examples}
+\author{Elie, Anne, Joel}
+\date{Last edit:~\today}
+\begin{document}
+\maketitle
+\tableofcontents
 % 
-\begin{example}
-    Let $\g =\sl_2$, $\lambda = 0$, $\mu = -\alpha$, and ${\bf R} = \varnothing$. Then apparently $Y^0_{-\alpha}$ is the distribution algebra of $\Gm(\CC) = \CC^\times$
-    $$Y^0_{-\alpha} = \CC[r,r^{-1},y]/(yr - ry = r) \qquad y = r\partial_r$$
-    It acts on the function algebra of $\CC^\times$ 
-    $$\CC[r,r^{-1}] = \bigoplus \CC\{r^n\}$$ 
-    by $y(r^n) = n r^n$ which therefore has (additive?) character 
-    $$\sum_{-\infty}^\infty (e^\alpha)^n\dim \CC\{r^n\}$$
-    
-    Note that if we do not invert $r$ the character is $\frac 1 {1-e^\alpha}$ whose Laurent series has ``near zero'' leading term $\frac 1 \alpha$ the $T$-equivariant multiplicity of the MV cycle $\Gr^0\cap S^{-\alpha}_-$.
-    
-    Now $R_{-\alpha} = \CC[x]$ is the KLR algebra on a single dotted strand. Nilpotent modules are those on which dots act nilpotently. In particular they are finite dimensional modules. Take the simplest example of such a module $\CC = \CC[x]/(x)$. The weight spaces of the image of this module under the \cite{kam19} equivalence $\Theta$ are $d_a(\CC) = \delta_a \CC$ for $a\in 2\ZZ$ (not sure why 2) and the action of 
-    $$
-    \bigoplus_{a,b\in\ZZ}\delta_b\CC[x]\delta_a
-    $$
-    on $$ \bigoplus_{a\in 2\ZZ}\delta_a\CC $$
-    should give the same character $\sum t^a$???
-    Joel's suggestion from last year is to investigate this special case, in view of the following ``Zastava'' phenomenon
-    $$
-    \begin{tikzcd}
-        W^0_{-\alpha} = T^\ast \CC^\times = \CC^\times \times\CC & \CC^\times = S^0 \cap S^{-\alpha}_- \ar[l] 
-    \end{tikzcd}
-    $$
-    Namely, $Y^0_{-\alpha}$ quantizes/deforms $W^0_{-\alpha}$ which contains open subsets of stable MV cycles as attracting sets. 
-\end{example}
+\input{a1.tex}
+% \input{Affinesl2.tex}
+\input{a2.tex}
+\input{a3wt121.tex}
+\input{klrw.tex}
+%
+\bibliographystyle{plain}
+\bibliography{bibsty/mvklr}
+%
+%
+\end{document}

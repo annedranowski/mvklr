@@ -1,13 +1,9 @@
-\documentclass[11pt]{article}
+% !TeX root = ./examples.tex
+
 %
-\usepackage{bibsty/mvklr}
-\title{Case study: weight $\alpha_1 + 2\alpha_2 + \alpha_3$ in type $A_3$}
-\author{Elie, Anne, Joel}
-\begin{document}
-\maketitle
-%
-We would like to deform the map $\barD : \CC[N]\to \CC[\treg]$ such that \todo{what}. 
-To this end, we sample/compare candidates for quantum and asymptotic versions of $\barD$ on elements of the MV basis of weight $\nu = (1,2,1) = \alpha_1 + 2\alpha_2 + \alpha_3$. The dimension of $\CC[N]_{-\nu}$ is $\kpf(\nu) = 5$. The five \todo{partitions} of $\nu$ are:
+\section{Type $A_3$ weight $\alpha_1 + 2\alpha_2 + \alpha_3$}
+This section deals with elements (of the MV basis) of weight $\nu = (1,2,1) = \alpha_1 + 2\alpha_2 + \alpha_3$ in (finite) type $A_3$. 
+The dimension of $\CC[N]_{-\nu}$ is $\kpf(\nu) = 5$. The five \todo{partitions} of $\nu$ are:
 \begin{enumerate}
     \item $(\alpha_1 + \alpha_2) + (\alpha_2) + (\alpha_3)$
     \item $(\alpha_1 + \alpha_2 + \alpha_3) + (\alpha_2)$
@@ -16,9 +12,9 @@ To this end, we sample/compare candidates for quantum and asymptotic versions of
     \item $(\alpha_1) + 2(\alpha_2) + (\alpha_3)$
 \end{enumerate}
 % 
-Fix the order $3 < 2 < 1$ on $I$ and fix the \todo{compatible} reduced expression $\uvi = (1,2,3,1,2,1)$ for $w_0\in W$. 
+We fix the order $3 < 2 < 1$ on the vertex set of the $A_3$ Dynkin diagram, and fix the \todo{compatible} reduced expression $\uvi = (1,2,3,1,2,1)$ for $w_0\in W$. 
 
-\anne{Verify that this is indeed the order we want!} 
+\anne{Verify that this is indeed the order we want! Define all highlighted \todo{words}.} 
 
 With respect to these choices, we can replace the above list of partitions by \todo{Lusztig data}:  
 \begin{enumerate}
@@ -47,7 +43,7 @@ For the time being we use two equivalent conventions:
     \item {\color{red}The word for the positive root $\alpha_i + \cdots + \alpha_j$ is $i\,i+1\,\cdots\,j$ i.e.\ increasing wrt $1 < 2 < 3$, and root words are concatenated in decreasing order} (Mine)
     \item {\color{blue}The word for the positive root $\alpha_i + \cdots + \alpha_j$ is $j\,j-1\,\cdots\,i$ i.e.\ decreasing wrt $1 < 2 < 3$, and root words are concatenated in increasing order} (Elie's)
 \end{enumerate}
-\section*{The data}
+\subsection{The data}
 \begin{description}
     \item[{\bf 1.} $n_\bullet = (0,1,0,1,0,1)$:] 
     % $; $\lambda = (4,3,1,0)$ and $\mu = (3,2,2,1)$ 
@@ -135,7 +131,7 @@ Does $q$ also do this? I would like to \todo{justify} rewriting this Hilbert ser
 
 \joel{What are these $T$s? And what do you mean here by $ q^\alpha$? If you just mean $ \alpha$ but in multiplicative notation, maybe it would be better to write $ e^\alpha$ to avoid confusion with the $ q $ occurring later in Elie's $D_q$.}
 
-\anne{Yes! Definitely: $e^\alpha$ is a more appropriate substitution. Another thing we should check is if the coincidence we are observing in this case persists in higher rank. The guess is that MV $\neq$ dual canonical so we should actually witness the $q=1$ substition fail to recover $\varepsilon$ at some point.}
+\anne{Definitely: $e^\alpha$ --- fixed. Another thing we should check is if the coincidence we are observing in this case persists in higher rank. The guess is that MV $\neq$ dual canonical so we should actually witness the $q=1$ substition fail to recover $\varepsilon$ at some point.}
 
 Jon Brundan's program outputs dual canonical basis elements.
 Using Jon Brundan's program, the irreducible character of the simple KLR module $L$ with the given Lusztig datum is 
@@ -271,7 +267,7 @@ $$
 $$
 Using M2 we find that $I$ has Hilbert series 
 \[
-    TODO 
+    \frac{1}{\left(1-{T}_{0}{T}_{1}{T}_{2}\right)\left(1-{T}_{1}{T}_{2}\right)\left(1-{T}_{0}{T}_{1}\right)\left(1-{T}_{1}\right)}
 \]
 Using JB, the character of the corresponding simple $L$ is 
 % IC[2] 
@@ -413,10 +409,10 @@ and evaluating at $q = 1$ we recover
     \frac{1}{\left({a}_{2}\right)\left({a}_{1}\right)\left({a}_{1}+{a}_{2}\right)\left({a}_{1}+{a}_{2}+{a}_{3}\right)}    
 \]
 \end{description}
-\subsection*{Summary}
-Note that we are able to read off the $T$-eqms from the polytopes. The denominators are products of edge directions emanating from the zero vertex, with multiplicity. As to the loop rotation I am not sure. 
+\subsection{Summary}
+Note that we are able to read off the $T$-eqms from the polytopes even in the singular case. The denominators are products of edge directions emanating from the zero vertex, with multiplicity. As to the loop rotation I am not sure. 
 %   
-\begin{table}[h]
+\begin{table}[ht!]
     % 
     \small
     \begin{tabular}{cccc}
@@ -433,12 +429,12 @@ Note that we are able to read off the $T$-eqms from the polytopes. The denominat
     % 
     \end{table}
 % 
-\section*{Questions}
+\subsection{Questions}
 \begin{enumerate}
     \item For Elie: Remind me how we tell what are the words that show up in $\ch_q$
     \item For Joel: Do the words showing up in $\ch_q(L)$ tell us about the support of $L$? In particular, can we associate to these words MV cycles? I thought not, since they need not be ``good'' words.
 \end{enumerate}
-\section*{Takeaways?}
+\subsection{Takeaways?}
 Elie? Joel? Todo.. 
 \joel{One think that came to my mind from these examples is the following:
 Essentially the problem is to try to guess how to go from Elie's
@@ -454,190 +450,3 @@ are the ones where we have a very simple choice of $\mu$ (like all 1s)
 for the MVy isomorphism. Is this true? Can these be related to each?
 
 What about simpler examples, in A1 or A2?}
-
-\section*{Smaller examples}
-% 
-\subsection*{Type $A_1$}
-$\nu = n\alpha = \underbrace{(\alpha)+\cdots+(\alpha)}_{n}$ and $n_\bullet = (n)$. There is just one partition for each $\nu$, and hence just one MV cycle. 
-\[
-\underline{w}[n_\bullet] = 1.1\dots 1\qquad \lambda = (2n)\ge \mu = (n,n)    
-\]
-The MV polytope will just be the line segment $[0,n]$ in $\RR\alpha$. The tableau will be 
-\[
-\young(11\tinydots122\tinydots 2)    
-\]
-The ideal of the corresponding MV cycle in $\CC[a_1..a_n]$ is got by imposing the vacuous condition $A^{2n} = 0$ on 
-\[
-    A = \left[\begin{BMAT}{cccc:cccc}{cccc:cccc}
-        0 & 1 & & & & & & \\
-          & 0 & 1 & & & & &  \\
-              &  & \ddots & 1 & & & & \\
-              &  &  & 0  & a_1 & a_2 & \cdots & a_n \\
-              &  &  &    & 0 & 1 & & \\
-              &  &  &    &  & 0 & 1 & \\ 
-              &  &  &    &  &   & \ddots & 1 \\
-              &  &  &    &  &   &  & 0 
-    \end{BMAT}\right]\mapsto \begin{bmatrix}
-        t^n & 0 \\
-        -a_1 - a_2 t - \cdots - a_n t^{n-1} & t^n 
-    \end{bmatrix}
-\]
-In other words, the MV cycle is $\AA^n = \spec \CC[a_1..a_n]$. Its multidegree is just 1, while its equivariant multiplicity is
-\[
-    \varepsilon_0^{T\times\CC^\times}(\AA^n) = \frac{1}{(\alpha)(\alpha + \hbar)\cdots(\alpha + (n-1)\hbar)}
-\]
-Its Hilbert series is
-{
-\[
-    \frac{1}{\left(1-e^\alpha\right)\left(1-e^{\alpha + \hbar}\right)\left(1-e^{\alpha+2\hbar}\right)
-    % \left(1-e^{\alpha + 3\hbar}\right)\left(1-e^{\alpha + 4\hbar} \right)\left(1-e^{\alpha + 5\hbar} \right)\left(1-e^{\alpha+6\hbar}\right)\left(1-e^{\alpha+7\hbar} \right)
-    \cdots 
-    \left(1-e^{\alpha+(n-1)\hbar} \right)}  
-\]}
-TODO: consider Elie's, Daniel's suggestion of replacing $\hbar$ by $\alpha_0$ where $\alpha_0 = \hbar + \widetilde\alpha$ and $\widetilde\alpha$ is the maximal root? 
-
-Comparing with the corresponding irreducible character, in JB we do 
-\begin{verbatim}
-    SetCartan("a",1);
-    Compute([1]); 
-\end{verbatim} 
-to find 
-\begin{verbatim}
-    IC = 1
-\end{verbatim}
-The function \texttt{Compute} takes a weight $\nu$ and finds e.g.\ a matrix of irreducible characters. In this case, the argument is valued in $\NN$. In general the argument is valued in $\NN^I$ so that weight $\nu = a\alpha_1 + b\alpha_2 + \cdots + c \alpha_{n-1}$ is input as \texttt{[a|b|..|c]}. 
-We try a couple more to deduce a probably well-known to the rest of the world fact.
-{\scriptsize
-\begin{verbatim}
-    Compute([2]); IC = (q+q^-1)[1|1]; 
-    Compute([3]); IC = (q^3+2*q+2*q^-1+q^-3)[1|1|1]; 
-    Compute([4]); IC = (q^6+3*q^4+5*q^2+6+5*q^-2+3*q^-4+q^-6)[1|1|1|1];
-\end{verbatim}}
-We deduce that the simple of weight $n\alpha$ has irreducible character 
-\[
-    \frac{[n]!}{n!\alpha^n}
-\]
-where $[n]!$ denotes the $q$-factorial. Setting $q = 1$ gives $\frac 1 {\alpha^n}$ as expected.
-
-\subsection*{Idea}
-What if this character is itself a near zero approximation of an ``exponential''? i.e.\
-\[
-    \frac{[n]!}{n!}\frac 1 {(1-e^\alpha)^n}
-\]
-\subsection*{Type $A_2$}
-% 
-Let's look at a bunch of characters of weight $\nu = a\alpha_1 + b\alpha_2$ with $a \ge b$ because I think the results are going to be symmetric. Note, there are $\min(a,b)+1 = a+1$ Kostant partitions, MV cycles, etc. to consider.
-
-% This is not quite true. I said a half hour ago. Because the mdegs will not be symmetric in (a,b). But maybe up to renormalization? Idk. 
-
-{\bf Case $(a,b) = (n,1)$:} We always have 2 MV cycles. Their tableaux, words, mdegs are:
-{\small
-\[
-\begin{aligned}
-    &\young(1\dots12\dots22,3) & &\young(1\dots12\dots23,2) \\
-    &2.11\dots1 & & 12.1\dots1 \\
-    &\alpha_2 & & \alpha_1 
-\end{aligned}    
-\]}
-Their eqms are found by normalizing their mdegs wrt to the MVy embedding:
-$$\begin{aligned}
-    \frac{\alpha_2}{\mdeg(0)} &= \frac 1 {(\alpha_1) (\alpha_1 + \hbar)\cdots (\alpha_1 + (n-1)\hbar) (\alpha_1 + \alpha_2)} \\
-    \frac{\alpha_1}{\mdeg(0)} &= \frac 1 {(\alpha_1 + \hbar)\cdots(\alpha_1 + (n-1)\hbar)(\alpha_1 + \alpha_2)(\alpha_2)}
-\end{aligned}$$
-% 
-
-{\bf Case $(a,b) = (n,2)$:} We always have 3 MV cycles. Their tableaux, words, mdegs are:
-{\scriptsize
-\[
-\begin{aligned}
-    &\young(1\dots12\dots22,33) & &\young(1\dots12\dots23,23) & & \young(1\dots12\dots33,22) \\
-    &22.11\dots1 & & 2.12.1\dots1 & & 12.12.1\dots1\\
-    &(\alpha_2)(\alpha_2 + \hbar) & & (\alpha_1)(\alpha_2) & & (\alpha_1)(\alpha_1 + \hbar) 
-    % \\
-    % &\frac 1 {(\alpha_1) (\alpha_1 + \hbar)\cdots (\alpha_1 + (n-1)\hbar) (\alpha_1 + \alpha_2)} & &\frac 1 {(\alpha_1 + \hbar)\cdots(\alpha_1 + (n-1)\hbar)(\alpha_1 + \alpha_2)(\alpha_2)}
-\end{aligned}    
-\]}
-This time, to find their eqms, divide the mdegs by:
-\[
-(\alpha_1)(\alpha_1 + \hbar)\cdots(\alpha_1 + (n-1)\hbar) (\alpha_1 + \alpha_2)(\alpha_1 + \alpha_2 + \hbar) (\alpha_2) (\alpha_2 + \hbar)    
-\]
-
-{\bf Case $(a,b) = (n,3)$:} Will have 4 MV cycles\dots
-
-\subsection*{Some characters}
-No evident patterns. 
-% 
-{
-\begin{table}[ht!]
-    \begin{adjustbox}{max width=\textwidth}
-    \begin{tabular}{cl}
-        $(a,b)$ & $\ch_q$ \\
-        \hline
-        $(1,1)$ & $q[1|2]+[2|1]$ \\
-        & $[1|2]$ \\
-        $(1,2)$ & $(q^3+q)[1|2|2]+(q^2+1)[2|1|2]+(q+q^{-1})[2|2|1]$\\
-        &$(q+q^{-1})[1|2|2]+[2|1|2]$ \\
-        $(1,3)$ & $(q^6+2q^4+2q^2+1)[1|2|2|2]+(q^5+2q^3+2q+q^{-1})[2|1|2|2]+(q^4+2q^2+2+q^{-2})[2|2|1|2]+(q^3+2q+2q^{-1}+q^{-3})[2|2|2|1]$ \\
-        & $(q^3+2q+2q^{-1}+q^{-3})[1|2|2|2]+(q^2+2+q^{-2})[2|1|2|2]+(q+q^{-1})[2|2|1|2]$
-    \end{tabular}
-\end{adjustbox}
-\end{table}
-}
-\section*{KLR side}
-\begin{lemma}\cite{kamnitzer2019category}
-    There is a functor $\Theta$ such that for any integral pair $(\vi,\va)$
-    \[
-    W_{\vi,\va}\Theta(M) = d(\vi,\va) M    
-    \]
-\end{lemma}
-The proof of this lemma defines the vector space 
-\[
-\Theta(M) = \bigoplus_{(\vi,\va)\text{ integral}} d(\vi,\va) M \delta(\vi,\va)
-\]
-where $\delta(\vi,\va)$ is a formal symbol introduced to keep track of the different $(\vi,\va)$ giving the same $d(\vi,\va)$. 
-
-We are interested in 
-\[
-\ch M = \sum \dim (d(\vi,\va) M) e^{\wt (\delta(\vi,\va) )}    
-\]
-or 
-\[
-\ch_q M = \sum\dim_q (d(\vi,\va) M) D_{\vi,\va}   
-\]
-where $D_{\vi,\va}$ is UNKNOWN and 
-$$\dim_q (d(\vi,\va) M) = \sum_k (\dim d(\vi,\va) M)_k q^k$$
-
-In the $A_1$ case $a\in 2\ZZ$ and $\vi$ for some reason does not matter. 
-Also, $\dim (d(\va) M)$ are all 1-dimensional, but perhaps in different degrees? Let's guess degree $\va/2$. 
-What we get is 
-\[
-    \sum_{n\in\ZZ} q^{n} D_{2n}
-\]
-Let's take $D_{a} = e^{a\alpha/2}$ and sum over $n\ge 0$. Then we get 
-\[
-    \sum_{n\ge 0} q^n e^{n\alpha} = \frac 1 {1 - qe^\alpha}
-\]
-which has asymptotics 
-\[
-\frac 1 {1 - q(1 + \alpha)}    
-\]
-If we further substitute $q = e^\hbar$ for no apparent reason and take asymptotics in $\hbar$ we find 
-\[
-    \frac 1 {1 - e^\hbar (1 + \alpha)}  \to \frac 1 {1 - (1 + \hbar) (1 + \alpha)} = \frac 1 {\alpha + \hbar + \alpha\hbar } 
-\]
-%
-% import bibliography from tex.bib file
-%
-\bibliographystyle{plain}
-\bibliography{bibsty/mvklr}
-%
-% for bundling, bbl file contains
-%
-% \begin{thebibliography}{E-G-S}
-
-% \bibitem[A1]{Anderson00}
-% J.~E.~Anderson, \textit{On Mirkovi\'c and Vilonen's Intersection Homology cycles for the Loop Grassmannian.} PhD thesis, Princeton University, 2000.
-
-% \end{thebibliography}
-%
-\end{document}

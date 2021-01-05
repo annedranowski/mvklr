@@ -1,0 +1,82 @@
+% !TeX root = ./examples.tex
+
+\section{KLRW side}
+
+
+% 
+In \cite{kam19} the authors are interested in the quantized shifted Yangian $Y^\lambda_\mu$ because when $\g$ is finite type and $\mu$ is dominant it is filtered and its associated graded is the coordinate ring of $\Gr^\lambda_\mu$ a transverse slice to a spherical Schubert variety in the affine Grassmannian. 
+%
+\begin{theorem}\cite{kam19}
+    The category of nilpotent modules for the parity KLR algebra ${}_-P_\mu^{{\bf R}}$ is equivalent to the category of weight modules for the corresponding truncated shifted Yangian $Y^\lambda_\mu({\bf R})$.
+\end{theorem}
+% 
+\begin{lemma}\cite{kamnitzer2019category}
+    There is a functor $\Theta$ such that for any integral pair $(\vi,\va)$
+    \[
+    W_{\vi,\va}\Theta(M) = d(\vi,\va) M    
+    \]
+\end{lemma}
+The proof of this lemma defines the vector space 
+\[
+\Theta(M) = \bigoplus_{(\vi,\va)\text{ integral}} d(\vi,\va) M \delta(\vi,\va)
+\]
+where $\delta(\vi,\va)$ is a formal symbol introduced to keep track of the different $(\vi,\va)$ giving the same $d(\vi,\va)$. 
+
+We are interested in 
+\[
+\ch M = \sum \dim (d(\vi,\va) M) e^{\wt (\delta(\vi,\va) )}    
+\]
+or 
+\[
+\ch_q M = \sum\dim_q (d(\vi,\va) M) D_{\vi,\va}   
+\]
+where $D_{\vi,\va}$ is UNKNOWN and 
+$$\dim_q (d(\vi,\va) M) = \sum_k (\dim d(\vi,\va) M)_k q^k$$
+
+\subsection{$A_1$ attempts}
+
+In the $A_1$ case $a\in 2\ZZ$ and $\vi$ for some reason does not matter. 
+Also, $\dim (d(\va) M)$ are all 1-dimensional, but perhaps in different degrees? Let's guess degree $\va/2$. 
+What we get is 
+\[
+    \sum_{n\in\ZZ} q^{n} D_{2n}
+\]
+Let's take $D_{a} = e^{a\alpha/2}$ and sum over $n\ge 0$. Then we get 
+\[
+    \sum_{n\ge 0} q^n e^{n\alpha} = \frac 1 {1 - qe^\alpha}
+\]
+which has asymptotics 
+\[
+\frac 1 {1 - q(1 + \alpha)}    
+\]
+If we further substitute $q = e^\hbar$ for no apparent reason and take asymptotics in $\hbar$ we find 
+\[
+    \frac 1 {1 - e^\hbar (1 + \alpha)}  \to \frac 1 {1 - (1 + \hbar) (1 + \alpha)} = \frac 1 {\alpha + \hbar + \alpha\hbar } 
+\]
+
+
+% 
+\begin{example}
+    Let $\g =\sl_2$, $\lambda = 0$, $\mu = -\alpha$, and ${\bf R} = \varnothing$. Then apparently $Y^0_{-\alpha}$ is the distribution algebra of $\Gm(\CC) = \CC^\times$
+    $$Y^0_{-\alpha} = \CC[r,r^{-1},y]/(yr - ry = r) \qquad y = r\partial_r$$
+    It acts on the function algebra of $\CC^\times$ 
+    $$\CC[r,r^{-1}] = \bigoplus \CC\{r^n\}$$ 
+    by $y(r^n) = n r^n$ which therefore has (additive?) character 
+    $$\sum_{-\infty}^\infty (e^\alpha)^n\dim \CC\{r^n\}$$
+    
+    Note that if we do not invert $r$ the character is $\frac 1 {1-e^\alpha}$ whose Laurent series has ``near zero'' leading term $\frac 1 \alpha$ the $T$-equivariant multiplicity of the MV cycle $\Gr^0\cap S^{-\alpha}_-$.
+    
+    Now $R_{-\alpha} = \CC[x]$ is the KLR algebra on a single dotted strand. Nilpotent modules are those on which dots act nilpotently. In particular they are finite dimensional modules. Take the simplest example of such a module $\CC = \CC[x]/(x)$. The weight spaces of the image of this module under the \cite{kam19} equivalence $\Theta$ are $d_a(\CC) = \delta_a \CC$ for $a\in 2\ZZ$ (not sure why 2) and the action of 
+    $$
+    \bigoplus_{a,b\in\ZZ}\delta_b\CC[x]\delta_a
+    $$
+    on $$ \bigoplus_{a\in 2\ZZ}\delta_a\CC $$
+    should give the same character $\sum t^a$???
+    Joel's suggestion from last year is to investigate this special case, in view of the following ``Zastava'' phenomenon
+    $$
+    \begin{tikzcd}
+        W^0_{-\alpha} = T^\ast \CC^\times = \CC^\times \times\CC & \CC^\times = S^0 \cap S^{-\alpha}_- \ar[l] 
+    \end{tikzcd}
+    $$
+    Namely, $Y^0_{-\alpha}$ quantizes/deforms $W^0_{-\alpha}$ which contains open subsets of stable MV cycles as attracting sets. 
+\end{example}

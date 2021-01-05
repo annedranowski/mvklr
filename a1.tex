@@ -1,0 +1,74 @@
+% !TeX root = ./examples.tex
+
+% \section{Smaller examples}
+% 
+\section{Type $A_1$}
+$\nu = n\alpha = \underbrace{(\alpha)+\cdots+(\alpha)}_{n}$ and $n_\bullet = (n)$. There is just one partition for each $\nu$, and hence just one MV cycle. 
+\[
+\underline{w}[n_\bullet] = 1.1\dots 1\qquad \lambda = (2n)\ge \mu = (n,n)    
+\]
+The MV polytope will just be the line segment $[0,n]$ in $\RR\alpha$. The tableau will be 
+\[
+\young(11\tinydots122\tinydots 2)    
+\]
+\subsection{meq}
+The ideal of the corresponding MV cycle in $\CC[a_1..a_n]$ is got by imposing the vacuous condition $A^{2n} = 0$ on 
+\[
+    A = \left[\begin{BMAT}{cccc:cccc}{cccc:cccc}
+        0 & 1 & & & & & & \\
+          & 0 & 1 & & & & &  \\
+              &  & \ddots & 1 & & & & \\
+              &  &  & 0  & a_1 & a_2 & \cdots & a_n \\
+              &  &  &    & 0 & 1 & & \\
+              &  &  &    &  & 0 & 1 & \\ 
+              &  &  &    &  &   & \ddots & 1 \\
+              &  &  &    &  &   &  & 0 
+    \end{BMAT}\right]\mapsto \begin{bmatrix}
+        t^n & 0 \\
+        -a_1 - a_2 t - \cdots - a_n t^{n-1} & t^n 
+    \end{bmatrix}
+\]
+In other words, the MV cycle is $\AA^n = \spec \CC[a_1..a_n]$. Its multidegree is just 1, while its equivariant multiplicity is
+\[
+    \varepsilon_0^{T\times\CC^\times}(\AA^n) = \frac{1}{(\alpha)(\alpha + \hbar)\cdots(\alpha + (n-1)\hbar)}
+\]
+Its Hilbert series is
+{
+\[
+    \frac{1}{\left(1-e^\alpha\right)\left(1-e^{\alpha + \hbar}\right)\left(1-e^{\alpha+2\hbar}\right)
+    % \left(1-e^{\alpha + 3\hbar}\right)\left(1-e^{\alpha + 4\hbar} \right)\left(1-e^{\alpha + 5\hbar} \right)\left(1-e^{\alpha+6\hbar}\right)\left(1-e^{\alpha+7\hbar} \right)
+    \cdots 
+    \left(1-e^{\alpha+(n-1)\hbar} \right)}  
+\]}
+
+{\bf To try.} Consider Elie's, Daniel's suggestion of replacing $\hbar$ by $\alpha_0$ where $\alpha_0 = \hbar + \widetilde\alpha$ and $\widetilde\alpha$ is the maximal root? 
+
+\subsection{char}
+Comparing with the corresponding irreducible character, in JB we do 
+\begin{verbatim}
+    SetCartan("a",1);
+    Compute([1]); 
+\end{verbatim} 
+to find 
+\begin{verbatim}
+    IC = 1
+\end{verbatim}
+The function \texttt{Compute} takes a weight $\nu$ and finds e.g.\ a matrix of irreducible characters. In this case, the argument is valued in $\NN$. In general the argument is valued in $\NN^I$ so that weight $\nu = a\alpha_1 + b\alpha_2 + \cdots + c \alpha_{n-1}$ is input as \texttt{[a|b|..|c]}. 
+We try a couple more to deduce a probably well-known to the rest of the world fact.
+{\scriptsize
+\begin{verbatim}
+    Compute([2]); IC = (q+q^-1)[1|1]; 
+    Compute([3]); IC = (q^3+2*q+2*q^-1+q^-3)[1|1|1]; 
+    Compute([4]); IC = (q^6+3*q^4+5*q^2+6+5*q^-2+3*q^-4+q^-6)[1|1|1|1];
+\end{verbatim}}
+We deduce that the simple of weight $n\alpha$ has irreducible character 
+\[
+    \frac{[n]!}{n!\alpha^n}
+\]
+where $[n]!$ denotes the $q$-factorial. Setting $q = 1$ gives $\frac 1 {\alpha^n}$ as expected.
+
+{\bf Question.}
+What if this character is itself a near zero approximation of an ``exponential''? i.e.\
+\[
+    \frac{[n]!}{n!}\frac 1 {(1-e^\alpha)^n}
+\]
