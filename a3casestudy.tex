@@ -1,12 +1,6 @@
 \documentclass[11pt]{article}
 %
-\usepackage{basic}
-\newcommand{\tinydots}{\hbox to 1em{.\hss.\hss.}}
-% 
-\newcommand{\anne}[1]{{\color{pink!50!blue}Anne:~#1}}
-\newcommand{\joel}[1]{{\color{red!50!orange}Joel:~#1}}
-\newcommand{\todo}[1]{{\color{red!50!white}\textbf{#1}}} % TODO
-%
+\usepackage{bibsty/mvklr}
 \title{Case study: weight $\alpha_1 + 2\alpha_2 + \alpha_3$ in type $A_3$}
 \author{Elie, Anne, Joel}
 \begin{document}
@@ -98,7 +92,10 @@ $$
 \young(111,2)\subset\young(111,22)\subset\young(111,223)\subset\young(1113,223) \subset \tau 
 $$
 It is $I = \left({a}_{1},{a}_{2},{a}_{3},a_9,a_5\right)$. 
-As an aside, we also check the assignment $\tau\mapsto w(\tau)$ that plays a key role in our conjectural recursive description of $I$. Here $w(\tau) = {123\atop 213}$ and indeed the second entry in the last column of the matrix above is free. Recall that the total number of free entries expected is $4 - \text{row}(4)$. 
+As an aside, we also check the assignment $\tau\mapsto w(\tau)$ that plays a key role in our conjectural recursive description of $I$. Here 
+% $w(\tau) = {123\atop 213}$ 
+$w(\tau) = \genfrac..{0pt}{1}{123}{213}$
+and indeed the second entry in the last column of the matrix above is free. Recall that the total number of free entries expected is $4 - \text{row}(4)$. 
 % Errors: had {a}_{6},{a}_{4}
 % 
 
@@ -198,7 +195,10 @@ $$
 \young(11,2)\subset\young(11,23)
 $$
 so $I = (a_1,a_2)$.
-Note that $w(\tau) = {123\atop 231}$, although in this case, all three entries in the last column of the matrix above are free, so the order is redundant? 
+Note that 
+$w(\tau) =  \genfrac..{0pt}{1}{123}{231}$,
+% $w(\tau) = {123\atop 231}$, 
+although in this case, all three entries in the last column of the matrix above are free, so the order is redundant? 
 The multidegree of $I$ is
 $$
 \mdeg I = (\alpha_1) (\alpha_1 + \alpha_2)
@@ -257,7 +257,10 @@ coming from shapes of the nested sequence of subtableaux of $\tau$
 \[
 \young(1,2)\subset\young(13,2)
 \]
-so $I = (a_1,a_6)$. Note that $w(\tau) = {123\atop 213}$ and the second and first entries in the last column of the matrix above are free.
+so $I = (a_1,a_6)$. Note that 
+% $w(\tau) = {123\atop 213}$ 
+$w(\tau) = \genfrac..{0pt}{1}{123}{213}$
+and the second and first entries in the last column of the matrix above are free.
 Its multidegree is
 $$
 \mdeg I = (\alpha_1) (\alpha_3)
@@ -307,7 +310,10 @@ coming from shapes of the nested sequence of subtableaux of $\tau$
 \[
     \young(12)\subset\young(12,3)
 \]
-so $I = \left({a}_{4},{a}_{1}{a}_{5}+{a}_{2}{a}_{6}\right)$. Note that $w(\tau) = {123\atop 132}$ and the first and third entries in the last column of the matrix above are free.
+so $I = \left({a}_{4},{a}_{1}{a}_{5}+{a}_{2}{a}_{6}\right)$. Note that 
+% $w(\tau) = {123\atop 132}$ 
+$w(\tau) = \genfrac..{0pt}{1}{123}{132}$ 
+and the first and third entries in the last column of the matrix above are free.
 Its multidegree is 
 $$
 \mdeg I = (\alpha_2) (\alpha_1 + \alpha_2 + \alpha_3)
@@ -369,7 +375,10 @@ $$
 \young(11,2) \subset \young(112,2) \subset \young(112,23) \subset \young(112,233)
 $$
 so $I = \left({a}_{1},{a}_{3},{a}_{6},{a}_{8},{a}_{9}\right)$. 
-Note that $w(\tau) = {123\atop 132}$ and the first entry in the last column of the matrix above is free.
+Note that 
+% $w(\tau) = {123\atop 132}$ 
+$w(\tau) = \genfrac..{0pt}{1}{123}{132}$ 
+and the first entry in the last column of the matrix above is free.
 Its multidegree is
 % \todo{is} 
 $$
@@ -620,7 +629,7 @@ If we further substitute $q = e^\hbar$ for no apparent reason and take asymptoti
 % import bibliography from tex.bib file
 %
 \bibliographystyle{plain}
-\bibliography{tex}
+\bibliography{bibsty/mvklr}
 %
 % for bundling, bbl file contains
 %

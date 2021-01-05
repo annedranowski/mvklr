@@ -59,9 +59,13 @@
 \usepackage{enumitem}
 % 
 % 
+% Misc
+% 
+\newcommand{\tinydots}{\hbox to 1em{.\hss.\hss.}}
 \renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
 \newcommand\into{\hookrightarrow}
 \newcommand\Det{\mathrm{Det}}
+% 
 % % % % 
 % Ops %
 % % % % 
@@ -268,3 +272,9 @@
 % \numberwithin{equation}{subsection}
 % \renewcommand{\theequation}{\alph{equation}}
 % 
+% Commenting/annotating 
+% 
+\newcommand{\anne}[1]{{\color{pink!50!blue}Anne:~#1}}
+\newcommand{\joel}[1]{{\color{red!50!orange}Joel:~#1}}
+\newcommand{\todo}[1]{{\color{red!50!white}\textbf{#1}}} % TODO
+%
