@@ -2,7 +2,7 @@
 %
 \usepackage{bibsty/mvklr}
 % 
-\title{Deformed DH measure?}
+\title{Deformed DH measure? Deformed MV basis?}
 \author{Elie, Anne, Joel}
 \date{Last edit:~\today}
 %
@@ -29,7 +29,7 @@ By BKK Proposition 8.4, or Thesis Theorem 3.4.2, it can be realized more invaria
      \barD(f)(x) = f(n_x)\,.
 \end{equation}
 % 
-BKK, Proposition A.5 (also, Anne's Thesis, Proposition 5.4.4) shows that when $f = b_Z$ is an element of the MV basis indexed by a stable MV cycle of weight $\nu$, i.e.\ $Z\subset \overline{S^\nu_+\cap S^0_-}$
+BKK, Proposition A.5 (also, Thesis, Proposition 5.4.4) shows that if $f = b_Z$ is an element of the MV basis indexed by a stable MV cycle of weight $\nu$, i.e.\ $Z\subset \overline{S^\nu_+\cap S^0_-}$, then 
 \begin{equation}
     \label{eq:bardaseqm}
     \barD(b_Z) = \varepsilon_{L_0}^T (Z) \,. 
@@ -38,21 +38,35 @@ BKK, Proposition A.5 (also, Anne's Thesis, Proposition 5.4.4) shows that when $f
 When $f = c_Y$ is an element of the dual semicanonical basis indexed by an irreducible component $Y$ of $\Lambda(\nu)$
 \begin{equation}
     \label{eq:bardaseu} % eu for euler 
-    \barD(c_Y) = \sum_{\vi\in\Seq(\nu)}\chi(F_{\vi}(M))\barD_{\vi} \qquad M \in Y\,. 
+    \barD(c_Y) = \sum_{\vi\in\Seq(\nu)}\chi(F_{\vi}(M))\barD_{\vi}
+    % \qquad M \in Y\,. 
 \end{equation}
+where $M$ is a generic point of $Y$. 
 
-We would like an ``asymptotic'' $\hbar$-version of $\barD$ which manifests as a $T\times\CC^\times$-equivariant multiplicity on elements of the MV basis:
+We would like an ``asymptotic'' version of $\barD$ which manifests as $T\times\CC^\times$-equivariant multiplicity on elements of the MV basis
 $$
-\barD_\hbar(b_Z) = \varepsilon_{L_0}^{T\times\CC^\times} (Z) \in \CC(\t,\hbar)\,..
+\barD_\hbar(b_Z) = \varepsilon_{L_0}^{T\times\CC^\times} (Z) \in \CC(\t,\hbar)
 $$
+as well as a ``quantum'' version $\barD_q$ which specializes to $\barD_\hbar$ at $q = 1$ or $\hbar = 0$. 
 % 
-The right candidate for deformation is not yet clear. In \texttt{a3casestudy.tex} and \texttt{Affinesl2.tex} we calculate examples towards possible quantum and asymptotic versions of $\barD$.
 
-Recall the MVy isomorphism $\tilde\Phi : \TT_\mu\cap\cN \to G_1[t^{-1}]t^\mu$ defined by
+Candidates for deformation are not yet clear. In the files \texttt{a1.tex}, \texttt{a2.tex}, \texttt{a3wt121.tex} and \texttt{Affinesl2.tex} and \texttt{klrw.tex}, we collect examples of characters computed by various means, towards honing in on possible quantum and asymptotic versions of $\barD$.
+
+\section*{Background on MVy}
+% 
+There are two possibilities for $\barD_\hbar$. To say how we compute them (in type $A$) we need to recall the MVy isomorphism defined in terms of the map 
+% $\tilde\Phi : \TT_\mu\cap\cN \to G_1[t^{-1}]t^\mu$ defined by
 \begin{equation}
-    \tilde\Phi(A) = t^\mu + a(t) \qquad a(t)_{ij} = -\sum A_{ij}^k t^{k-1}
+    \begin{split}
+        \tilde\Phi : \TT_\mu\cap\cN &\to G_1[t^{-1}]t^\mu \\
+        A &\mapsto t^\mu + a(t) \qquad a(t)_{ij} = -\sum A_{ij}^k t^{k-1}
+    \end{split}
 \end{equation}
-where $A_{ij}^k$ denotes the $k$th entry from the left of the $\mu_j\times\mu_i$ block. We will use it to see what is the $T\times\CC^\times$ multidegree of $Z\subset\Gr_\mu$. Let $s\in\CC^\times$ act by loop rotation, and $g = \diag(t_1,\dots,t_m)\in T$ act by conjugation. Note that if we allowed $g\in T(\cO)$ then these actions would not commute. As it is we set  
+where $A_{ij}^k$ denotes the $k$th entry from the left of the $\mu_j\times\mu_i$ block. For the definition of $\TT_\mu$ see?
+% We will use it to see what is the $T\times\CC^\times$ multidegree of $Z\subset\Gr_\mu$. 
+
+Let $s\in\CC^\times$ act by loop rotation, and $g = \diag(t_1,\dots,t_m)\in T$ act by conjugation. Another possibility is to allow $g\in T(\cO)$ which would not commute with $\CC^\times$ but intertwine it according to an easy rule. This is the action considered by PZJ. 
+We begin with the simpler action of just $T$, so that
 $$
 (g,s) \cdot \tilde\Phi(A) = {\color{red} s^{\mu}}((s^{-1}t)^\mu + g\cdot a(s^{-1}t)) = t^\mu + g\cdot {\color{red} s^{\mu}} a(s^{-1}t) 
 $$
@@ -61,11 +75,11 @@ $$
 \begin{aligned}
 (g\cdot {\color{red} s^{\mu}}a(st))_{ij} &= - t_jt_i^{-1}\sum_{k=1}^{\mu_i} A_{ij}^k s^{k-1{\color{red}+\mu_j}}t^{k-1} \\
 &= -t_jt_i^{-1}(A_{ij}^1 s^{\mu_j} + A_{ij}^2 s^{1 + \mu_j}t + \cdots + A_{ij}^{\mu_i}s^{\mu_i + \mu_j - 1}t^{\mu_i - 1}) \\
-&= -t_jt_i^{-1}s^{\mu_i + \mu_j - 1}(A_{ij}^1 s^{-\mu_i + 1} + A_{ij}^2 s^{-\mu_i + 2}t + \cdots + A_{ij}^{\mu_i}t^{\mu_i - 1})
+&= -t_jt_i^{-1}s^{\mu_i + \mu_j - 1}(A_{ij}^1 s^{-\mu_i + 1} + A_{ij}^2 s^{-\mu_i + 2}t + \cdots + A_{ij}^{\mu_i}t^{\mu_i - 1})\,.
 \end{aligned}
 $$
 In the limit $s\to \infty$ the $A_{ij}^{\mu_i}$ term dominates, so the multidegree of $a(t)_{ij}=0$ is 
-$$z_j - z_i + (\mu_i + \mu_j - 1)\hbar$$
+$$z_j - z_i + (\mu_i + \mu_j - 1)\hbar\,.$$
 In particular, the multidegree of zero in $\n$ will be 
 $$
 \prod_{\beta\in\Delta_+} (\beta + \hbar)
@@ -75,21 +89,62 @@ $$
 \prod_{1\le i<j\le m} (z_i - z_j + (\mu_i + \mu_j - 1)\hbar)
 $$
 
-Now in order to define the asymptotic analogue of $\barD$ on $\CC[N]$ we probably have to deform $\CC[N]$. Why? Let's recall how the geometric Satake works. The class of $Z\in\irr\overline{\Gr^\lambda\cap S^\mu_-}$ in the Borel--Moore homology of $\overline{\Gr^\lambda\cap S^\mu_-}$ is identified with a vector in $L(\lambda)_\mu$ such that the class of the fixed point $L_\lambda$ is sent to the highest weight vector $v_\lambda$. Then $v\in L(\lambda)$ is sent to $f\in\CC[N]$ such that 
-$$
-f(n) = v_\lambda^\ast(n\cdot v)
-$$
-But what happens to the $\CC^\times$ action under this map? What happens to the $T$ action for that matter? 
+Now in order to define the asymptotic analogue of $\barD$ on $\CC[N]$ we probably have to deform the ambient ring $\CC[N]$. 
 
+Let's recall how the geometric Satake works. The class of an algebraic cycle $Z\in\irr\overline{\Gr^\lambda\cap S^\mu_-}$ in the Borel--Moore homology of $\overline{\Gr^\lambda\cap S^\mu_-}$ is identified with a vector in $L(\lambda)_\mu$ such that the class of the fixed point $L_\lambda$ is sent to the highest weight vector $v_\lambda$. 
 
+There is a natural map $L(\lambda) \to \CC[N]$ got by sending a vector $v$ to the function $f_v$ such that 
+\begin{equation}
+    \label{eq:dualorig}
+f_v(n) = v_\lambda^\ast(n\cdot v)\,.
+\end{equation}
+Composing with $\barD$ 
+$$
+L(\lambda) \to \CC[N] \to \CC(t)
+$$ 
+we can try to describe $\barD(f_v)$.
+% 
+Recall that $n_x$ is the unique element of $\CC[N]$ such that $n_x x n_x^{-1} = x + e$ where $e$ is a principal nilpotent. Then 
+% 
+$$
+\barD(f_v) (x) = f_v(n_x) = v_\lambda^\ast (n_x \cdot v)\,. 
+$$
+
+By BKK Prop 8.4 (using Lusztig's $\vi$-parametrizations) the test inputs $\{n_x : x \in \lie(T)\}$ are unipotent matrices whose nonzero entries are rational functions in the weights of $T$. We can say that these inputs are simply capturing the info of $\Frac \CC[\lie(T)]$. 
+By BKK Corollary 10.6, $\{b_Z(n_x) : x \in \lie(T)\}$ is therefore capturing the weights of $T$ on $Z$ (at zero). 
+% 
+
+We need replacements for $n_x$ that are not only made up of rational functions in $\lie(T)$ but also $\lie(\CC^\times)$. 
+% 
+By the same token, we need replacements for $b_Z$. 
+% 
+
+Let's take a couple of steps back. Following \cite{berenstein2006geometric}, let $L(\lambda)$ be the restriction to $\fb$ of the finite-dimensional $\g$-module of highest weight $\lambda$. As a $\fb$-module $L(\lambda)$ can be realized as a quotient of $\cU\n$.
+\begin{equation}
+    L(\lambda) = \cU \n / I(\lambda) \qquad I(\lambda) = \sum \cU\n e_i^{\lambda(\alpha_i^\vee)+1}
+\end{equation} 
+The embedding (of $\fb$-modules) defined by Equation~\ref{eq:dualorig} is then just the graded dual of the quotient 
+\[
+\cU\n \to L(\lambda)    
+\]
+E.g.\ in \cite{berenstein1996canonical}, it is shown that the dual canonical basis of $\CC[N]$ is thus the specialization at $q = 1$ of the dual canonical basis of the quantized coordinate algebra $\CC_q[N]$. In that paper, the authors consider (the Drinfeld--Jimbo $q$-deformation) $\cU_q(\sl_{r+1})$ and use results of Lusztig and Kashiwara to construct good bases of $\sl_{r+1}$-modules by specializing at $q=1$ good bases of $\cU_q$-modules. Apparently, every $\cU_q$-module has a canonical realization as a subspace of $\CC_q[N]$.  
+
+Does the MV basis come from a basis of a $\cU_q$-module. We know that it can be deformed to a basis of a $\cU_\hbar$-bimodule. What is the relation between these algebras, their representations? 
+
+% But what happens to the $\CC^\times$ action under this map? What happens to the $T$ action for that matter? 
+
+\begin{comment}
 {\color{red} Joel says:} what do you mean by the $ \CC^\times$ action and the $ T$ action?  Careful that you are not getting confused with the actioin on the MV cycles (the action used for the multidegrees).  There is a $ T $ action on $L(\lambda)$ and one on $ \CC[N]$, and the map $ L(\lambda) \rightarrow \CC[N]$ is equivariant, up to a character.
 
 It may be helpful to recall that if $Z$ is stable of type $\nu$ then $b_Z$ is unique such that whenever $\nu + \mu \in P_+$ 
 $$
 t^\mu Z \subset \overline{\Gr^{\nu + \mu }} \Rightarrow b_Z = \Psi_{\nu + \mu}([t^\mu Z])
 $$
+\end{comment}
 
-\section{Two $\CC^\times$ actions}
+\section{Two rotation actions?}
+% 
+In this section we address the two  
 
 \section{Ben's suggestion} 
 To investigate the special case of  Gelfand--Tsetlin modules and $W$-algebras discussed at the end of \cite{kamnitzer2019category}. I have yet to do any examples. 
