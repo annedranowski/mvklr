@@ -103,10 +103,41 @@ So $P_3 / P_1$ recovers the first eqm of weight $(2,1)$ you computed in type $A_
 
 Another question: do the polynomials 
 $$Q_{n+1} / Q_n = \alpha_1 \cdots (\alpha_1 + n \delta)(\alpha_1 + \alpha_2) \cdots (\alpha_1 + \alpha_2 + n \delta)$$
-{\color{blue}Anne: Yes I think this one coincedes with Lusztig datum $(n,0,n)$. Have to think about the one below.}
+{\color{blue}Anne: Yes I think this one coincides with Lusztig datum $(n,0,n)$. Have to think about the one below.}
 
 and 
 $$R_{n+1} / R_n =   \alpha_1 \cdots  (\alpha_1 + n \delta)(\alpha_1 + \alpha_2) \cdots ((n-1) \delta + \alpha_1 + \alpha_2) $$
 coincide with the denominators of certain type $A_2$ eqms? 
+
+ \bigskip
+ 
+  For any non-negative integers $(k,l)$, define the following  polynomial:
+  \begin{align*}
+   Q_{k,l} & = \alpha_1^k (\alpha_1 + \delta)^{k-1} \cdots (\alpha_1 + (k-1)\delta) \alpha_2^l (\alpha_2 + \delta)^{l-1} \cdots (\alpha_2 + (l-1)\delta) \\ & \qquad \qquad \qquad  (\alpha_1 + \alpha_2)^{k+l} (\alpha_1 + \alpha_2 + \delta)^{k+l-1} \cdots (\alpha_1 + \alpha_2 + (k+l-1)\delta) .  
+     \end{align*}
+  It is also convenient to slightly extend this definition by setting
+  $$ Q_{k,-1} := \alpha_1^k (\alpha_1 + \delta)^{k-1} \cdots (\alpha_1 + (k-1)\delta) (\alpha_1 + \alpha_2)^{k-1} (\alpha_1 + \alpha_2 + \delta)^{k-2} \cdots (\alpha_1 + \alpha_2 + (k-2)\delta) . $$
+Now fix a couple of integers $(n,m)$ with $n \in 2 \mathbb{N}_{\geq 1}$ and $m$ arbitrary, and consider the reduced element $(s_1s_2s_0)^n(s_2s_1s_0)^m$ in the Weyl group of type $A_2^{(1)}$. Then the polynomials obtained for the corresponding standard seed are the $Q_{k,l} , (k,l) \in \{(k, \epsilon - 1) , 1 \leq k \leq n+1 \} \cup \{ (n + \epsilon , l) , 0 \leq l \leq m \}$. 
+The unipotent cell $\mathbb{C}[N((s_1s_2s_0)^n(s_2s_1s_0)^m)]$ contains many other standard seeds. It seems that the form of the polynomials is preserved under mutations from one the others. Now note that these polynomials are in fact entirely determined by the order of $\alpha_1, \alpha_2, \alpha_1 + \alpha_2$. In other words we consider the following map:
+$$
+ \begin{array}{ccc}
+      KP(\mathfrak{sl}_3) & \longrightarrow & \mathbb{Z}[\alpha_1, \alpha_2] \\
+      (a,b,c) & \longmapsto & Q[a,b,c]
+ \end{array}
+$$
+where
+\begin{align*}
+ Q[a,b,c] & :=  \alpha_2^a (\alpha_2 + \delta)^{a-1} \cdots (\alpha_2 + (a-1)\delta) (\alpha_1 + \alpha_2)^{b} (\alpha_1 + \alpha_2 + \delta)^{b-1} \cdots \\ &   \qquad  \qquad \qquad  \qquad \qquad  (\alpha_1 + \alpha_2 + (b-1)\delta) \alpha_1^c (\alpha_1 + \delta)^{c-1} \cdots (\alpha_1 + (c-1)\delta). 
+ \end{align*}
+Then conjecturally the $\bar{D}$ of the flag minors of the unipotent cell $\mathbb{C}[N((s_1s_2s_0)^n(s_2s_1s_0)^m)]$ should be of the form $ 1 / Q[k,k+l,l]$. Now one has to consider certain specific quotients of these polynomials. Below are the few examples I have obtained so far. 
+\begin{enumerate}
+    \item $Q[0,n,n]/Q[0,n-1,n-1] = \alpha_1 (\alpha_1 + \delta) \cdots (\alpha_1 + (n-1) \delta) (\alpha_1 + \alpha_2)(\alpha_1 + \alpha_2 + \delta) \cdots (\alpha_1 + \alpha_2 + (n-1) \delta)$.
+    \item $Q[0,n-1,n]/Q[0,n-1,n-1] = \alpha_1 (\alpha_1 + \delta) \cdots (\alpha_1 + (n-1) \delta)$.
+    \item $Q[n,n,0]/Q[n-1,n-1,0] = \alpha_2 (\alpha_2 + \delta) \cdots (\alpha_2 + (n-1) \delta) (\alpha_1 + \alpha_2)(\alpha_1 + \alpha_2 + \delta) \cdots (\alpha_1 + \alpha_2 + (n-1) \delta)$.
+    \item $Q[n,n-1,0]/Q[n-1,n-1,0] = \alpha_2 (\alpha_2 + \delta) \cdots (\alpha_2 + (n-1) \delta)$.
+    \item $\left( Q[0,1,1]/Q[0,n-1,n] \right) \times \left( Q[0,n-1,n]/Q[0,n-1,n-1] \right) = \alpha_1(\alpha_1 + \alpha_2)  (\alpha_1 + \delta) \cdots (\alpha_1 + (n-1) \delta)$. 
+\end{enumerate}
+
+The first four correspond to the $T \times \mathbb{C}^{*}$-equivariant multiplicities of the MV cycles with respective Lusztig data $(0,n,0), (0,0,n), (n,0,n)$ and $(n,0,0)$. These precisely correspond the powers of each of the four cluster variables in $\mathbb{C}[N]$ of type $A_2$. The fifth correspond to the $T \times \mathbb{C}^{*}$-equivariant multiplicities of the first familty of Lusztig data for the weight $n \alpha_1 + \alpha_2$. 
 
 \end{document}
