@@ -1,0 +1,58 @@
+% 
+\documentclass[11pt]{article}
+%
+\usepackage{bibsty/mvklr}
+\title{Notes on KLRW} % aka KLRWBG = KLRW Background
+\author{Anne}
+\date{Last edit:~\today}
+\begin{document}
+\maketitle
+\tableofcontents
+% 
+\section{Emailing with Ben Webster}
+I told Ben that I didn't think that the $q$'s in JB's program match the weight of the loop rotation $\hbar$ and that the mismatch is evidenced by the examples we have computed so far. 
+
+\begin{quotation}
+BW: I suspect that the issue is something about the conventions;  this might be hard to prove in general, but I will be *very* surprised if there isn't some version of it that works.
+\end{quotation}
+
+I also told Ben that I was trying to compute some $\barD$ on the KLR side using \cite[Lemma 5.17]{kamnitzer2019category}. 
+
+\begin{quotation}
+    BW: That lemma contains no information about grading, so it will not help you. In order to get this all right, you have to dig into that proof and use a grading on the module over the KLR algebra to build a compatible filtration on the corresponding Yangian module, and computing the torus $\times$ loop grading on the associated graded.  
+
+    What will happen is that each idempotent of the KLR algebra corresponds to a set of weight spaces where the values of the longitudes are ordered as in the idempotents. All of these weight spaces are isomorphic as vector spaces, but the isomorphisms are not $T$-equivariant, so you end up with a sum over the points in a cone defined by the filtration, then all these weight spaces pick up a filtration, and I think they should be isomorphic up to shift; the shift of filtration will be something like the lowest filtered degree you can get an isomorphism between the weight spaces in. Working out exactly how is what I was suggesting in the paragraph above. I don't think the details have been written down anywhere, and what written about is the full extent of the thinking I've done about the issue. What you should get is that there's a rational function which plays the role of your $D_{i,a}$ which tells you the torus $\times$ loop character contributed by the different points in the cone; this should also have some fixed contribution to the torus $\times$ loop equivariant index. The characters from JB tell you the contribution of a single point in the cone, with the q's describing the loop grading, and other points are just their grading from $D_{i,a}$ multiplied by JB's character; this also tells you that the equivariant index is the JB character (identifying $q$ and $\hbar$), times the contributions to the equivariant index of the corresponding cone. 
+
+    That all sounds doable, so maybe the assertion that some filtration with the porperty that it matches the graded character (as in JB's program) isn't too hard. The part I get stuck on is how to characterize this filtration in some natural seeming way, but maybe that's not the most important thing right now. 
+\end{quotation}
+
+I told Ben that we would like something like
+% 
+\begin{equation}
+    \ch_q M = \sum\dim_q (d(\vi,\va) M) D_{\vi,\va}  
+\end{equation}
+% 
+where 
+% 
+$\dim_q (d(\vi,\va) M) = \sum_k (\dim d(\vi,\va) M)_k q^k$
+% 
+and 
+% 
+$D_{\vi,\va}$ is I’m not sure what yet. In the $\sl_2$ case we have 1 black strand and 1 red strand. The parameter $a = \va$ on the black strand is an even integer, and for some reason the red strand/the $\vi$ does not matter. 
+
+\begin{quotation}
+    BW: The value on the red strand is a purely quantum thing, so you can't see it after taking associated graded. 
+% 
+    [If we take $M$ with polytope a line segment of length $n$ in direction $\alpha$ we get] $n$ black strands all with the same label.
+\end{quotation}
+% 
+% My final confusing remark: I guess that M will have n generators m_1,..,m_n such that each has T-weight \alpha and m_k has C^x weight k\hbar. 
+% 
+% BW: Not totally sure what this means.  Also, I think the answer might depend on the choice of highest weight (assuming you want to use the obvious filtration on a Coulomb branch).  
+
+%
+\bibliographystyle{plain}
+\bibliography{bibsty/mvklr}
+%
+%
+\end{document}
